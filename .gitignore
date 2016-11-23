@@ -15,6 +15,7 @@
 #Exclude all
 #########
 *
+*.pdf
 !*.md
 !*/
 !.gitignore
