@@ -14,8 +14,10 @@
 #########
 #Exclude all
 #########
+webtalk_pa.xml
 *
 *.pdf
+*.cache
 !*.md
 !*/
 !.gitignore
