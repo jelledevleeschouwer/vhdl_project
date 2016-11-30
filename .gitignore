@@ -7,20 +7,15 @@
 ##	it might not be complete. In addition, XAPP 1165 should be followed.
 #########################################################################################################
 #########
-#   OpenPicIDE
-#########
-!*.openPicIde   # Project file for OpenPICIDE
-!*.psm          # Assembly files for picoBlaze
-#########
 #Exclude all
 #########
-webtalk_pa.xml
 *
 *.pdf
 *.cache
 !*.md
 !*/
 !.gitignore
+webtalk_pa.xml
 ###########################################################################
 ##	VIVADO
 ###########################################################################
@@ -97,3 +92,8 @@ webtalk_pa.xml
 !*.elf
 !*.bmm
 !*.xmp
+#########
+#   OpenPicIDE
+#########
+!*.openPicIde   # Project file for OpenPICIDE
+!*.psm          # Assembly files for picoBlaze
