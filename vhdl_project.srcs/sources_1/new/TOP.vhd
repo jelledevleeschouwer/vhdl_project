@@ -87,8 +87,8 @@ component touch_driver_picoblaze is
         MISO : in std_logic;
         CLK  : in std_logic;
         RST  : in std_logic;
-        X_POS: out std_logic_vector(11 downto 0);
-        Y_POS: out std_logic_vector(11 downto 0)
+        X_POS: out std_logic_vector(9 downto 0);
+        Y_POS: out std_logic_vector(9 downto 0)
     );
 end component;
 --Hardware that generates a control signal to draw a rectangle
@@ -181,8 +181,8 @@ signal X_STOP     : std_logic_vector(9 downto 0);
 signal Y_STOP     : std_logic_vector(9 downto 0);
 
 signal TOUCH_VALID: std_logic;
-signal TOUCH_X    : std_logic_vector(11 downto 0);
-signal TOUCH_Y    : std_logic_vector(11 downto 0);
+signal TOUCH_X    : std_logic_vector(9 downto 0);
+signal TOUCH_Y    : std_logic_vector(9 downto 0);
 signal NEW_X      : std_logic_vector(9 downto 0);
 signal NEW_Y      : std_logic_vector(9 downto 0);
 
@@ -224,15 +224,11 @@ GND<='0';
 BL_EN<='1'; -- back light enable!
 
 update_touch: process(CLK)
-    variable x_val : integer range 4095 downto 0;
-    variable y_val : integer range 4095 downto 0;
 begin
     if (CLK'event and CLK='1') then
         if (TOUCH_VALID = '1') then
-            x_val := to_integer(shift_right(unsigned(TOUCH_X), 3));
-            y_val := to_integer(shift_right(unsigned(TOUCH_Y), 4));
-            NEW_X <= std_logic_vector(to_unsigned(x_val, 10));
-            NEW_Y <= std_logic_vector(to_unsigned(y_val, 10));
+            NEW_X <= TOUCH_X;
+            NEW_Y <= TOUCH_Y;
         end if;
     end if;
 end process;
@@ -253,7 +249,12 @@ show_figure: process(CLK)
 
 begin
 if(CLK'event and CLK='1') then
-    if (PLAYER_V = '1') then
+    RED <= x"00";
+    BLUE <= x"00";
+    GREEN <= x"00";
+    if (SHOW = '1') then
+        GREEN <= x"FF";
+    elsif (PLAYER_V = '1') then
         RED <= PLAYER_R;
         GREEN <= PLAYER_G;
         BLUE<= PLAYER_B;

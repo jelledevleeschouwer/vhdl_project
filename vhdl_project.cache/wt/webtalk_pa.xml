@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Dec 14 17:06:37 2016">
+<application name="pa" timeStamp="Wed Dec 21 15:20:27 2016">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="b8aa081f8170425d9b5b7b146888b227" type="ProjectID"/>
-<property name="ProjectIteration" value="91" type="ProjectIteration"/>
+<property name="ProjectID" value="ff54a83a92ec45de979b9591a8eb868a" type="ProjectID"/>
+<property name="ProjectIteration" value="9" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,43 +17,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="14" type="JavaHandler"/>
-<property name="AutoConnectTarget" value="21" type="JavaHandler"/>
-<property name="CloseProject" value="2" type="JavaHandler"/>
-<property name="DebugWizardCmdHandler" value="7" type="JavaHandler"/>
-<property name="EditDelete" value="4" type="JavaHandler"/>
-<property name="EditPaste" value="2" type="JavaHandler"/>
-<property name="EditUndo" value="3" type="JavaHandler"/>
-<property name="FlipToViewTaskSynthesis" value="4" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="58" type="JavaHandler"/>
-<property name="MarkDebug" value="21" type="JavaHandler"/>
-<property name="NewHardwareDashboard" value="2" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="55" type="JavaHandler"/>
-<property name="OpenProject" value="3" type="JavaHandler"/>
-<property name="OpenRecentTarget" value="18" type="JavaHandler"/>
-<property name="ProgramDevice" value="35" type="JavaHandler"/>
-<property name="ProjectSettingsCmdHandler" value="6" type="JavaHandler"/>
-<property name="RunBitgen" value="93" type="JavaHandler"/>
-<property name="RunSchematic" value="7" type="JavaHandler"/>
-<property name="RunSynthesis" value="46" type="JavaHandler"/>
-<property name="SaveDesign" value="7" type="JavaHandler"/>
-<property name="SaveDesignAs" value="1" type="JavaHandler"/>
-<property name="SaveFileProxyHandler" value="3" type="JavaHandler"/>
-<property name="SetTopNode" value="11" type="JavaHandler"/>
-<property name="ShowView" value="18" type="JavaHandler"/>
-<property name="SimulationClose" value="2" type="JavaHandler"/>
-<property name="SimulationRestart" value="7" type="JavaHandler"/>
-<property name="SimulationRun" value="9" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="48" type="JavaHandler"/>
-<property name="TimingConstraintsWizard" value="5" type="JavaHandler"/>
-<property name="ToolsTemplates" value="1" type="JavaHandler"/>
-<property name="UnmarkDebug" value="2" type="JavaHandler"/>
-<property name="UpdateSourceFiles" value="4" type="JavaHandler"/>
-<property name="ViewLayoutCmd" value="5" type="JavaHandler"/>
-<property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
-<property name="ViewTaskProjectManager" value="42" type="JavaHandler"/>
-<property name="ViewTaskSynthesis" value="4" type="JavaHandler"/>
-<property name="ZoomFit" value="1" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="7" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="7" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="7" type="JavaHandler"/>
+<property name="OpenRecentTarget" value="6" type="JavaHandler"/>
+<property name="ProgramDevice" value="1" type="JavaHandler"/>
+<property name="RunBitgen" value="8" type="JavaHandler"/>
+<property name="RunSynthesis" value="1" type="JavaHandler"/>
+<property name="UpdateSourceFiles" value="11" type="JavaHandler"/>
+<property name="ViewTaskProjectManager" value="6" type="JavaHandler"/>
 </item>
 </section>
 </application>

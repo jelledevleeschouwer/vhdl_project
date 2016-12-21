@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7z010clg400-1" LaunchTime="1481731596">
+<GenRun Id="impl_2" LaunchPart="xc7z010clg400-1" LaunchTime="1482330027">
+  <File Type="OPT-DCP" Name="TOP_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="TOP_route_status.pb"/>
   <File Type="PA-TCL" Name="TOP.tcl"/>
-  <File Type="OPT-DCP" Name="TOP_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="TOP_timing_summary_init.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="TOP_methodology_drc_opted.rpt"/>
   <File Type="RDI-RDI" Name="TOP.vdi"/>
   <File Type="PWROPT-DRC" Name="TOP_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="TOP_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="TOP_timing_summary_init.rpt"/>
   <File Type="OPT-DRC" Name="TOP_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="TOP_pwropt.dcp"/>
   <File Type="OPT-HWDEF" Name="TOP.hwdef"/>
@@ -31,8 +31,8 @@
   <File Type="ROUTE-DRC" Name="TOP_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="TOP_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="TOP_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_methodology_drc_routed.pb"/>
   <File Type="BG-BIT" Name="TOP.bit"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="TOP_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="TOP_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="TOP_power_routed.rpx"/>
@@ -114,7 +114,7 @@
     <File Path="$PSRCDIR/sources_1/imports/picoblaze/touch_driver.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="//Mac/Home/Documents/School/2016-2017/Programmable_Logic/vhdl_project/pico_blaze/touch_driver.vhd"/>
-        <Attr Name="ImportTime" Val="1481116260"/>
+        <Attr Name="ImportTime" Val="1482330018"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -152,7 +152,7 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
     <Step Id="init_design"/>
-    <Step Id="opt_design"/>
+    <Step Id="opt_design" EnableStepBool="0"/>
     <Step Id="power_opt_design"/>
     <Step Id="place_design"/>
     <Step Id="post_place_power_opt_design"/>

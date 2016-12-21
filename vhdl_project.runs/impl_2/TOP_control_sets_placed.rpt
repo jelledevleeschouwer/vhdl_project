@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Wed Dec 14 17:09:01 2016
+| Date         : Wed Dec 21 15:23:31 2016
 | Host         : DESKTOP-I9KA4SE running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    21 |
-| Unused register locations in slices containing registers |    65 |
+| Number of unique control sets                            |    20 |
+| Unused register locations in slices containing registers |    46 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,42 +33,41 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              63 |           20 |
+| No           | No                    | No                     |              57 |           17 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              92 |           42 |
-| Yes          | No                    | No                     |              29 |            8 |
+| No           | Yes                   | No                     |             103 |           41 |
+| Yes          | No                    | No                     |              67 |           23 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              15 |            6 |
+| Yes          | Yes                   | No                     |              15 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+
-|          Clock Signal         |               Enable Signal              |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+-------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+
-|  pll/CLK_9MHz                 | disp_drive/H_SYNC_i_1_n_0                | RST_IBUF                              |                1 |              1 |
-|  background1/SHOW_reg_i_2_n_0 |                                          |                                       |                1 |              1 |
-|  CLK_IBUF_BUFG                | spi_driver/processor/CE                  | spi_driver/processor/R                |                2 |              2 |
-|  CLK_IBUF_BUFG                | spi_driver/CS_i_1_n_0                    |                                       |                1 |              3 |
-|  CLK_IBUF_BUFG                |                                          | RED[4]_i_1_n_0                        |                1 |              4 |
-|  CLK_IBUF_BUFG                | spi_driver/X_POS[11]_i_1_n_0             |                                       |                1 |              4 |
-|  CLK_IBUF_BUFG                | spi_driver/Y_POS[11]_i_1_n_0             |                                       |                1 |              4 |
-|  CLK_IBUF_BUFG                | spi_driver/X_POS[7]_i_1_n_0              |                                       |                2 |              5 |
-|  CLK_IBUF_BUFG                |                                          | RED[1]_i_1_n_0                        |                4 |              6 |
-|  CLK_IBUF_BUFG                |                                          | spi_driver/processor/R                |                3 |              6 |
-|  CLK_IBUF_BUFG                |                                          | RED[7]_i_1_n_0                        |                4 |              7 |
-|  CLK_IBUF_BUFG                |                                          | spi_driver/program_rom/instruction[7] |                3 |              8 |
-|  CLK_IBUF_BUFG                | spi_driver/processor/spm_enable_flop_n_0 |                                       |                2 |              8 |
-|  CLK_IBUF_BUFG                | spi_driver/processor/I3                  | spi_driver/processor/R                |                3 |             12 |
-|  CLK_IBUF_BUFG                | spi_driver/VALID                         |                                       |                3 |             13 |
-|  CLK_IBUF_BUFG                | spi_driver/processor/I3                  |                                       |                2 |             16 |
-|  CLK_IBUF_BUFG                | spi_driver/processor/WE                  |                                       |                2 |             16 |
-|  pll/CLK_9MHz                 |                                          | disp_drive/X_POS[9]_i_1_n_0           |               11 |             20 |
-|  CLK_IBUF_BUFG                |                                          | pd/clear                              |                5 |             20 |
-|  pll/CLK_9MHz                 |                                          | RST_IBUF                              |               11 |             21 |
-|  CLK_IBUF_BUFG                |                                          |                                       |               19 |             62 |
-+-------------------------------+------------------------------------------+---------------------------------------+------------------+----------------+
++-------------------------------+------------------------------------------+------------------------------------------------+------------------+----------------+
+|          Clock Signal         |               Enable Signal              |                Set/Reset Signal                | Slice Load Count | Bel Load Count |
++-------------------------------+------------------------------------------+------------------------------------------------+------------------+----------------+
+|  pll/CLK_9MHz                 | disp_drive/H_SYNC_i_1_n_0                | RST_IBUF                                       |                1 |              1 |
+|  background1/SHOW_reg_i_2_n_0 |                                          |                                                |                1 |              1 |
+|  CLK_IBUF_BUFG                | spi_driver/processor/CE                  | spi_driver/processor/R                         |                1 |              2 |
+|  CLK_IBUF_BUFG                | spi_driver/CS_i_1_n_0                    |                                                |                1 |              3 |
+|  CLK_IBUF_BUFG                |                                          | spi_driver/processor/active_interrupt_flop_n_0 |                3 |              4 |
+|  CLK_IBUF_BUFG                |                                          | spi_driver/processor/R                         |                3 |              6 |
+|  CLK_IBUF_BUFG                |                                          | spi_driver/program_rom/instruction[7]          |                4 |              8 |
+|  CLK_IBUF_BUFG                | spi_driver/processor/spm_enable_flop_n_0 |                                                |                2 |              8 |
+|  CLK_IBUF_BUFG                | spi_driver/VALID_i_1_n_0                 |                                                |                3 |              8 |
+|  CLK_IBUF_BUFG                | spi_driver/x                             |                                                |                4 |              8 |
+|  CLK_IBUF_BUFG                | spi_driver/processor/I3                  | spi_driver/processor/R                         |                3 |             12 |
+|  CLK_IBUF_BUFG                | spi_driver/VALID                         |                                                |                5 |             16 |
+|  CLK_IBUF_BUFG                | spi_driver/processor/I3                  |                                                |                2 |             16 |
+|  CLK_IBUF_BUFG                | spi_driver/processor/WE                  |                                                |                2 |             16 |
+|  pll/CLK_9MHz                 |                                          | disp_drive/X_POS[9]_i_1_n_0                    |               10 |             20 |
+|  CLK_IBUF_BUFG                |                                          | pd/clear                                       |                5 |             20 |
+|  pll/CLK_9MHz                 |                                          | RST_IBUF                                       |               10 |             21 |
+|  CLK_IBUF_BUFG                |                                          | rectangle1/SHOW                                |                6 |             24 |
+|  CLK_IBUF_BUFG                | X_START[9]_i_1_n_0                       |                                                |               10 |             32 |
+|  CLK_IBUF_BUFG                |                                          |                                                |               16 |             56 |
++-------------------------------+------------------------------------------+------------------------------------------------+------------------+----------------+
 
 

@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Dec 14 17:08:02 2016
-# Process ID: 4760
+# Start of session at: Wed Dec 21 15:22:12 2016
+# Process ID: 6140
 # Current directory: Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/impl_2
 # Command line: vivado.exe -log TOP.vdi -applog -messageDb vivado.pb -mode batch -source TOP.tcl -notrace
 # Log file: Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/impl_2/TOP.vdi
@@ -83,89 +83,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
   RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 2 instances
 
-link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 467.773 ; gain = 248.313
+link_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 467.688 ; gain = 248.309
 INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
-Command: opt_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
-Running DRC as a precondition to command opt_design
-
-Starting DRC Task
-INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Project 1-461] DRC finished with 0 Errors
-INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.234 . Memory (MB): peak = 471.766 ; gain = 3.992
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-
-Starting Logic Optimization Task
-Implement Debug Cores | Checksum: 1e34de235
-
-Phase 1 Retarget
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 1e34de235
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.296 . Memory (MB): peak = 937.844 ; gain = 0.000
-
-Phase 2 Constant Propagation
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Opt 31-10] Eliminated 47 cells.
-Phase 2 Constant Propagation | Checksum: e1c42149
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.514 . Memory (MB): peak = 937.844 ; gain = 0.000
-
-Phase 3 Sweep
-INFO: [Opt 31-12] Eliminated 595 unconnected nets.
-INFO: [Opt 31-120] Instance rectangle1 (draw_rectangle) has been optimized to an empty box cell during sweep but it has constraints that prevent its removal. Empty box cells do not impact the implementation flow but they have no functional relevance.
-Resolution: If this is not expected, please check for DONT_TOUCH properties or timing constraint set on the empty box cell or on nets connected to the cell. If found, remove the relevant DONT_TOUCH property or timing constraint and re-run opt_design.
-INFO: [Opt 31-11] Eliminated 114 unconnected cells.
-Phase 3 Sweep | Checksum: 1b602d166
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 937.844 ; gain = 0.000
-
-Starting Connectivity Check Task
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 937.844 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1b602d166
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 937.844 ; gain = 0.000
-
-Starting Power Optimization Task
-INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-INFO: [Pwropt 34-9] Applying IDT optimizations ...
-INFO: [Pwropt 34-10] Applying ODC optimizations ...
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Power 33-232] No user defined clocks were found in the design!
-Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
-Running Vector-less Activity Propagation...
-
-Finished Running Vector-less Activity Propagation
-
-
-Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
-INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 1 newly gated: 0 Total Ports: 2
-Number of Flops added for Enable Generation: 3
-
-Ending PowerOpt Patch Enables Task | Checksum: 1358c5653
-
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1358c5653
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 85.270
-INFO: [Common 17-83] Releasing license: Implementation
-27 Infos, 20 Warnings, 19 Critical Warnings and 0 Errors encountered.
-opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1023.113 ; gain = 555.340
-Writing placer database...
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.250 . Memory (MB): peak = 1023.113 ; gain = 0.000
-INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/impl_2/TOP_drc_opted.rpt.
 INFO: [Chipscope 16-241] No debug cores found in the current design.
 Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
 or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
@@ -184,10 +103,10 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 474.508 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 941.238 ; gain = 0.000
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
 
@@ -196,147 +115,146 @@ Phase 1.1.1 ParallelPlaceIOClockAndInitTop
 Phase 1.1.1.1 Pre-Place Cells
 Phase 1.1.1.1 Pre-Place Cells | Checksum: 2ef5649f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.452 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.1.1.2 Constructing HAPIClkRuleMgr
 Phase 1.1.1.2 Constructing HAPIClkRuleMgr | Checksum: 2ef5649f
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.578 . Memory (MB): peak = 1023.113 ; gain = 0.000
-INFO: [Timing 38-35] Done setting XDC timing constraints.
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.1.1.3 IO and Clk Clean Up
 
 Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr
 Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr | Checksum: 2ef5649f
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
 Phase 1.1.1.3 IO and Clk Clean Up | Checksum: 2ef5649f
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.1.1.4 Implementation Feasibility check On IDelay
 Phase 1.1.1.4 Implementation Feasibility check On IDelay | Checksum: 2ef5649f
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.1.1.5 Commit IO Placement
 Phase 1.1.1.5 Commit IO Placement | Checksum: 6ca7061a
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
 Phase 1.1.1 ParallelPlaceIOClockAndInitTop | Checksum: 6ca7061a
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 7680cd78
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 151f6cfb3
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.2 Build Placer Netlist Model
 
 Phase 1.2.1 Place Init Design
 
 Phase 1.2.1.1 Make Others
-Phase 1.2.1.1 Make Others | Checksum: 173ab87d9
+Phase 1.2.1.1 Make Others | Checksum: 1ebb12590
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 1.2.1 Place Init Design | Checksum: 79cabf65
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 1.2.1 Place Init Design | Checksum: 1ac06010b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 1.2 Build Placer Netlist Model | Checksum: 79cabf65
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 1.2 Build Placer Netlist Model | Checksum: 1ac06010b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 79cabf65
+Phase 1.3 Constrain Clocks/Macros | Checksum: 1ac06010b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 79cabf65
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 1 Placer Initialization | Checksum: 1ac06010b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: 1984f59ef
+Phase 2 Global Placement | Checksum: 225f4b402
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1984f59ef
+Phase 3.1 Commit Multi Column Macros | Checksum: 225f4b402
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: c14e838e
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1e3c2bbbf
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 7deb04e0
+Phase 3.3 Area Swap Optimization | Checksum: 2360da943
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3.4 Small Shape Detail Placement
-Phase 3.4 Small Shape Detail Placement | Checksum: 14740a631
+Phase 3.4 Small Shape Detail Placement | Checksum: 14904e964
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3.5 Re-assign LUT pins
-Phase 3.5 Re-assign LUT pins | Checksum: 14740a631
+Phase 3.5 Re-assign LUT pins | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 3.6 Pipeline Register Optimization
-Phase 3.6 Pipeline Register Optimization | Checksum: 14740a631
+Phase 3.6 Pipeline Register Optimization | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 14740a631
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 3 Detail Placement | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 4 Post Placement Optimization and Clean-Up
 
 Phase 4.1 Post Commit Optimization
-Phase 4.1 Post Commit Optimization | Checksum: 14740a631
+Phase 4.1 Post Commit Optimization | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 4.2 Sweep Clock Roots: Post-Placement
-Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 14740a631
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 4.3 Post Placement Cleanup
-Phase 4.3 Post Placement Cleanup | Checksum: 14740a631
+Phase 4.3 Post Placement Cleanup | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 4.4 Placer Reporting
-Phase 4.4 Placer Reporting | Checksum: 14740a631
+Phase 4.4 Placer Reporting | Checksum: 14904e964
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 
 Phase 4.5 Final Placement Cleanup
-Phase 4.5 Final Placement Cleanup | Checksum: 209211044
+Phase 4.5 Final Placement Cleanup | Checksum: a25493e2
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 209211044
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: a25493e2
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Ending Placer Task | Checksum: 1172ea718
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
+Ending Placer Task | Checksum: 75d77793
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 941.238 ; gain = 466.730
 INFO: [Common 17-83] Releasing license: Implementation
-42 Infos, 20 Warnings, 19 Critical Warnings and 0 Errors encountered.
+20 Infos, 19 Warnings, 19 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1023.113 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 941.238 ; gain = 473.551
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1023.113 ; gain = 0.000
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1023.113 ; gain = 0.000
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1023.113 ; gain = 0.000
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 941.238 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.406 . Memory (MB): peak = 941.238 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.220 . Memory (MB): peak = 941.238 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 941.238 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
@@ -348,67 +266,68 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 4b7475a7 ConstDB: 0 ShapeSum: cbba3171 RouteDB: 0
+Checksum: PlaceDB: 3738037c ConstDB: 0 ShapeSum: 3e9f7417 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: bbf52a8f
+Phase 1 Build RT Design | Checksum: 1a620d70e
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:37 . Memory (MB): peak = 941.238 ; gain = 0.000
 
 Phase 2 Router Initialization
 INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
 
 Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: bbf52a8f
+Phase 2.1 Fix Topology Constraints | Checksum: 1a620d70e
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:37 . Memory (MB): peak = 943.629 ; gain = 2.391
 
 Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: bbf52a8f
+Phase 2.2 Pre Route Cleanup | Checksum: 1a620d70e
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:37 . Memory (MB): peak = 943.629 ; gain = 2.391
  Number of Nodes with overlaps = 0
-Phase 2 Router Initialization | Checksum: 12693b495
+Phase 2 Router Initialization | Checksum: f3d789ce
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:37 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 1774b7d09
+Phase 3 Initial Routing | Checksum: 148bf27fc
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:37 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 93
+ Number of Nodes with overlaps = 113
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-Phase 4.1 Global Iteration 0 | Checksum: 140e29e9f
+Phase 4.1 Global Iteration 0 | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 4 Rip-up And Reroute | Checksum: 140e29e9f
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
+Phase 4 Rip-up And Reroute | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 5 Delay and Skew Optimization
-Phase 5 Delay and Skew Optimization | Checksum: 140e29e9f
+Phase 5 Delay and Skew Optimization | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
-Phase 6.1 Hold Fix Iter | Checksum: 140e29e9f
+Phase 6.1 Hold Fix Iter | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
-Phase 6 Post Hold Fix | Checksum: 140e29e9f
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
+Phase 6 Post Hold Fix | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.459178 %
-  Global Horizontal Routing Utilization  = 0.569393 %
+  Global Vertical Routing Utilization    = 0.469454 %
+  Global Horizontal Routing Utilization  = 0.578355 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -418,41 +337,42 @@ Router Utilization Summary
   Number of Node Overlaps             = 0
 
 Congestion Report
-North Dir 1x1 Area, Max Cong = 35.1351%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 29.7297%, No Congested Regions.
+North Dir 1x1 Area, Max Cong = 30.6306%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 20.7207%, No Congested Regions.
 East Dir 1x1 Area, Max Cong = 29.4118%, No Congested Regions.
-West Dir 1x1 Area, Max Cong = 35.2941%, No Congested Regions.
-Phase 7 Route finalize | Checksum: 140e29e9f
+West Dir 1x1 Area, Max Cong = 32.3529%, No Congested Regions.
+Phase 7 Route finalize | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 948.703 ; gain = 7.465
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 140e29e9f
+Phase 8 Verifying routed nets | Checksum: 132965d2d
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 949.492 ; gain = 8.254
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 14ddcebbd
+Phase 9 Depositing Routes | Checksum: 54bdf3ae
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 949.492 ; gain = 8.254
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:38 . Memory (MB): peak = 949.492 ; gain = 8.254
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-50 Infos, 20 Warnings, 19 Critical Warnings and 0 Errors encountered.
+28 Infos, 19 Warnings, 19 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:36 . Memory (MB): peak = 1023.113 ; gain = 0.000
+route_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:42 . Memory (MB): peak = 949.492 ; gain = 8.254
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1023.113 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 949.492 ; gain = 0.000
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/impl_2/TOP_drc_routed.rpt.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
@@ -474,10 +394,17 @@ WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used p
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A1' of cell spi_driver/processor/data_path_loop[5].arith_logical_lut/LUT5 (in spi_driver/processor/data_path_loop[5].arith_logical_lut macro) is not included in the LUT equation: 'O5=(A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A1' of cell spi_driver/processor/data_path_loop[6].arith_logical_lut/LUT5 (in spi_driver/processor/data_path_loop[6].arith_logical_lut macro) is not included in the LUT equation: 'O5=(A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A1' of cell spi_driver/processor/data_path_loop[7].arith_logical_lut/LUT5 (in spi_driver/processor/data_path_loop[7].arith_logical_lut macro) is not included in the LUT equation: 'O5=(A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A1' of cell spi_driver/processor/middle_zero_lut/LUT5 (in spi_driver/processor/middle_zero_lut macro) is not included in the LUT equation: 'O5=0'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A1' of cell spi_driver/processor/use_zero_flag_lut/LUT5 (in spi_driver/processor/use_zero_flag_lut macro) is not included in the LUT equation: 'O5=(A3*(~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/alu_decode1_lut/LUT5 (in spi_driver/processor/alu_decode1_lut macro) is not included in the LUT equation: 'O5=((~A3)*A4*(~A5))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/carry_flag_lut/LUT5 (in spi_driver/processor/carry_flag_lut macro) is not included in the LUT equation: 'O5=(A1*A3*A5)+(A1*(~A3)*(~A4)*A5)+((~A1)*A3*A4*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/middle_zero_lut/LUT5 (in spi_driver/processor/middle_zero_lut macro) is not included in the LUT equation: 'O5=0'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/register_enable_lut/LUT5 (in spi_driver/processor/register_enable_lut macro) is not included in the LUT equation: 'O5=(A1*A3*A5)+(A1*(~A3)*(~A4)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A2' of cell spi_driver/processor/use_zero_flag_lut/LUT5 (in spi_driver/processor/use_zero_flag_lut macro) is not included in the LUT equation: 'O5=(A3*(~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/address_loop[0].output_data.pc_vector_mux_lut/LUT5 (in spi_driver/processor/address_loop[0].output_data.pc_vector_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/address_loop[10].output_data.pc_vector_mux_lut/LUT5 (in spi_driver/processor/address_loop[10].output_data.pc_vector_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
@@ -505,6 +432,13 @@ WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used p
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/data_path_loop[6].output_data.sy_kk_mux_lut/LUT5 (in spi_driver/processor/data_path_loop[6].output_data.sy_kk_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/data_path_loop[6].second_operand.out_port_lut/LUT5 (in spi_driver/processor/data_path_loop[6].second_operand.out_port_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/data_path_loop[7].arith_logical_lut/LUT5 (in spi_driver/processor/data_path_loop[7].arith_logical_lut macro) is not included in the LUT equation: 'O5=(A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/middle_zero_lut/LUT5 (in spi_driver/processor/middle_zero_lut macro) is not included in the LUT equation: 'O5=0'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A3' of cell spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/active_interrupt_lut/LUT5 (in spi_driver/processor/active_interrupt_lut macro) is not included in the LUT equation: 'O5=(A1*A2*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/address_loop[0].output_data.pc_vector_mux_lut/LUT5 (in spi_driver/processor/address_loop[0].output_data.pc_vector_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/address_loop[10].output_data.pc_vector_mux_lut/LUT5 (in spi_driver/processor/address_loop[10].output_data.pc_vector_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/address_loop[2].output_data.pc_vector_mux_lut/LUT5 (in spi_driver/processor/address_loop[2].output_data.pc_vector_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
@@ -531,10 +465,24 @@ WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used p
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/data_path_loop[6].output_data.sy_kk_mux_lut/LUT5 (in spi_driver/processor/data_path_loop[6].output_data.sy_kk_mux_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/data_path_loop[6].second_operand.out_port_lut/LUT5 (in spi_driver/processor/data_path_loop[6].second_operand.out_port_lut macro) is not included in the LUT equation: 'O5=(A1*A2)+(A1*(~A2)*(~A5))+((~A1)*A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/data_path_loop[7].arith_logical_lut/LUT5 (in spi_driver/processor/data_path_loop[7].arith_logical_lut macro) is not included in the LUT equation: 'O5=(A2*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/middle_zero_lut/LUT5 (in spi_driver/processor/middle_zero_lut macro) is not included in the LUT equation: 'O5=0'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A4' of cell spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/active_interrupt_lut/LUT5 (in spi_driver/processor/active_interrupt_lut macro) is not included in the LUT equation: 'O5=(A1*A2*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/middle_zero_lut/LUT5 (in spi_driver/processor/middle_zero_lut macro) is not included in the LUT equation: 'O5=0'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[0].lsb_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[1].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[2].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[3].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut/LUT5 (in spi_driver/processor/stack_loop[4].upper_stack.stack_pointer_lut macro) is not included in the LUT equation: 'O5=(A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDCN-1569) LUT equation term check - Used physical LUT pin 'A5' of cell spi_driver/processor/use_zero_flag_lut/LUT5 (in spi_driver/processor/use_zero_flag_lut macro) is not included in the LUT equation: 'O5=(A3*(~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC 23-20] Rule violation (PDRC-153) Gated clock check - Net background1/SHOW_reg_i_2_n_0 is a gated clock net sourced by a combinational pin background1/SHOW_reg_i_2/O, cell background1/SHOW_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC 23-20] Rule violation (RTSTAT-10) No routable loads - 502 net(s) have no routable loads. The problem bus(es) and/or net(s) are pd/EN_100_reg_i_5_n_1, pd/EN_100_reg_i_5_n_2, pd/EN_100_reg_i_5_n_3, pd/EN_100_reg_i_6_n_2, pd/EN_100_reg_i_6_n_3, pd/EN_100_reg_i_7_n_1, pd/EN_100_reg_i_7_n_2, pd/EN_100_reg_i_7_n_3, pd/EN_100_reg_i_8_n_1, pd/EN_100_reg_i_8_n_2, pd/EN_100_reg_i_8_n_3, pd/EN_100_reg_i_9_n_1, pd/EN_100_reg_i_9_n_2, pd/EN_100_reg_i_9_n_3, disp_drive/H_SYNC_reg_i_6_n_1 (the first 15 of 502 listed).
 WARNING: [DRC 23-20] Rule violation (ZPS7-1) PS7 block required - The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 69 Warnings
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 97 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
@@ -546,6 +494,6 @@ Creating bitstream...
 Writing bitstream ./TOP.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
-write_bitstream: Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 1347.828 ; gain = 324.715
+write_bitstream: Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1404.066 ; gain = 333.371
 INFO: [Vivado_Tcl 4-395] Unable to parse hwdef file TOP.hwdef
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 14 17:10:14 2016...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 21 15:25:05 2016...

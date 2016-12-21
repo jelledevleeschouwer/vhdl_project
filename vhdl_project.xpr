@@ -100,7 +100,7 @@
       <File Path="$PSRCDIR/sources_1/imports/picoblaze/touch_driver.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="//Mac/Home/Documents/School/2016-2017/Programmable_Logic/vhdl_project/pico_blaze/touch_driver.vhd"/>
-          <Attr Name="ImportTime" Val="1481116260"/>
+          <Attr Name="ImportTime" Val="1482330018"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -203,7 +203,7 @@
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
-        <Step Id="opt_design"/>
+        <Step Id="opt_design" EnableStepBool="0"/>
         <Step Id="power_opt_design"/>
         <Step Id="place_design"/>
         <Step Id="post_place_power_opt_design"/>

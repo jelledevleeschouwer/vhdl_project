@@ -70,21 +70,6 @@ if {$rc} {
   end_step init_design
 }
 
-start_step opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force TOP_opt.dcp
-  report_drc -file TOP_drc_opted.rpt
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-}
-
 start_step place_design
 set rc [catch {
   create_msg_db place_design.pb

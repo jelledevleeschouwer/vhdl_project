@@ -63,6 +63,7 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
 
     variable x : signed(9 downto 0);
     variable y : signed(9 downto 0);
+    
 begin
     x := signed(X_POS);
     y := signed(Y_POS);
