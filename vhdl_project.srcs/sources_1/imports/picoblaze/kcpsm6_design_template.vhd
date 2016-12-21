@@ -262,11 +262,11 @@ begin
             DCLK <= out_port(1);
             MOSI <= out_port(2);
         end if;
-        if port_id(2) = '1' then
+        if port_id(1) = '1' then
             -- Multiply X measurement by 2
-            x :=  unsigned(out_port) & "00";
+            x := unsigned(out_port) & "00";
         end if;
-        if port_id(4) = '1' then
+        if port_id(2) = '1' then
             y := "0" & unsigned(out_port) & "0";
             VALID <= '1';
         end if;

@@ -95,13 +95,13 @@ begin
                 if (yt >= top and yt < bottom) then
                     if (xt >= xll and xt < xl) then
                         PLAYER_X <= std_logic_vector(xll + half);
-                        new_x <= xll + half - (player_width srl 1);
+                        new_x <= xll + half - (player_width srl 1) + 20;
                     elsif (xt >= xl and xt <= xr) then
                         PLAYER_X <= std_logic_vector(xl + half);
                         new_x <= xl + half - (player_width srl 1);
                     elsif (xt > xr and xt <= xrr) then
                         PLAYER_X <= std_logic_vector(xr + half);
-                        new_x <= xr + half - (player_width srl 1);
+                        new_x <= xr + half - (player_width srl 1) - 20;
                     end if;
                 end if;
             end if;

@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Dec 21 15:54:19 2016
-# Process ID: 2924
+# Start of session at: Wed Dec 21 16:24:53 2016
+# Process ID: 4932
 # Current directory: Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/synth_2
 # Command line: vivado.exe -log TOP.vds -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file: Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.runs/synth_2/TOP.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5456 
+INFO: Helper process launched with PID 2556 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 292.902 ; gain = 86.191
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 292.773 ; gain = 86.289
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TOP' [Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/TOP.vhd:50]
 INFO: [Synth 8-3491] module 'PLL_9MHz' declared at 'Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/PLL_9MHz.vhd:26' bound to instance 'pll' of component 'PLL_9MHz' [Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/TOP.vhd:206]
@@ -404,7 +404,7 @@ INFO: [Synth 8-3491] module 'touch_driver' declared at 'Z:/Documents/School/2016
 INFO: [Synth 8-638] synthesizing module 'touch_driver' [Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/touch_driver.vhd:76]
 	Parameter DOA_REG bound to: 0 - type: integer 
 	Parameter DOB_REG bound to: 0 - type: integer 
-	Parameter INITP_00 bound to: 256'b0000001011000101000010101101001010101010101010000000101000001001010101101000101010100010101010101010101010101010101010101010001010101000101010101010101010101010101010011100000000000000000000100110011100001010001010001010100010101000101000101010001010001010 
+	Parameter INITP_00 bound to: 256'b0000000000000000000010110001010000101011010010101010100110001001100010010110100010101010001010101010101010101010101010101010101000101010100010101010101010101010101010101010100111000000000000100110011100001010001010001010100010101000101000101010001010001010 
 	Parameter INITP_01 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INITP_02 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INITP_03 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
@@ -412,14 +412,14 @@ INFO: [Synth 8-638] synthesizing module 'touch_driver' [Z:/Documents/School/2016
 	Parameter INITP_05 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INITP_06 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INITP_07 bound to: 256'b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter INIT_00 bound to: 256'b0101000000000000000000000111011011010000000000010001000000000110000000000111011011010000000000010001000000000100010100000000000000000000011101101101000000000001000100000000001000000000011101101101000000000001000100000000000000100000001000011000000000000000 
-	Parameter INIT_01 bound to: 256'b0100000100000111001000000010000001000001000001101010000000011111110100110001000010010011000000010000000001110110110100000000000100010000000000000000000001110110110100000000000100010000000000100000000000010100000000000001001100000000000100100001000100000000 
-	Parameter INIT_02 bound to: 256'b0000000001001101000000000100010100000000001111001001110100000001001000000011101011011101111111110001101000000000000110110000000000011000000000000001100100000000000101110000000000010110000000000001010100000000000101000000000000011101000001000101000000000000 
-	Parameter INIT_03 bound to: 256'b0000000000001001000000000111011011010000000000010001000000000000001000000010000100000000011010110010000000101010000000000100000100000000010100110000000001010000000000000100110100000000010010010000000000111100000000000100000100000000010110000000000001010000 
-	Parameter INIT_04 bound to: 256'b0101000000000000000000000000001000000000000000100101000000000000000000000000100100000000000000100000000000001001010100000000000000000000000010010000000000000010000000000000001001010000000000000000000001110110110100000000000100010000000000010101000000000000 
-	Parameter INIT_05 bound to: 256'b0100001000001110010000010000100001000010000011100101000000000000000000000001000000000111000100000000000000010000000000000111000001010000000000000000000000010000000001010001000000000000000100000000000001110000010100000000000000000000000000100000000000000010 
-	Parameter INIT_06 bound to: 256'b0101000000000000110101110001000011011010000010001101010100000100110110000000001001010000000000000000000001101011000010110111000000000001011100000001001000000000010100000000000000000000011010110000000101010000000100100000000001010000000000000100000100001000 
-	Parameter INIT_07 bound to: 256'b0000000000000000000000000000000000000000000000000101000000000000011000000111100011011110111111111011111000000000100111110000000100011110000000010001111100001000010100000000000000100000011100000010000001110101110100110000100010010011000000011011000000000001 
+	Parameter INIT_00 bound to: 256'b0101000000000000000000000110111111010000000000010001000000000110000000000110111111010000000000010001000000000100010100000000000000000000011011111101000000000001000100000000001000000000011011111101000000000001000100000000000000100000001000011000000000000000 
+	Parameter INIT_01 bound to: 256'b0100000100000111001000000010000001000001000001101010000000011111110100100001000010010010000000010000000001101111110100000000000100010000000000000000000001101111110100000000000100010000000000100000000000010100000000000001001100000000000100100001000100000000 
+	Parameter INIT_02 bound to: 256'b0000000000111010000000000011111100000000010101100000000001001110000000000100101100000000010000110000000000111010100111010000000100100000001110001101110111111111000101100000000000010101000000000001010000000000000100110000000000011101000001000101000000000000 
+	Parameter INIT_03 bound to: 256'b0001000000000001010100000000000000000000000010010000000001101111110100000000000100010000000000000010000000100001000000000110011000100000001001100000000001011110000000000011111100000000010100010000000001001110000000000100101100000000010001110000000001100010 
+	Parameter INIT_04 bound to: 256'b0000000000000010000000000000001001010000000000000000000000000010000000000000001001010000000000000000000000001001000000000000001000000000000010010101000000000000000000000000100100000000000000100000000000000010010100000000000000000000011011111101000000000001 
+	Parameter INIT_05 bound to: 256'b0000000001011011000000010011000001010000000000000100000100001000010000010000100001010000000000000000000000010000000001000001000000000000000100000000000001101001010100000000000000000000000100000000001100010000000000000001000000000000011010010101000000000000 
+	Parameter INIT_06 bound to: 256'b0001111111111111010100000000000000100000011010010010000001101110110100100000100010010010000000011011000000000001010100000000000011010110000001001101010100000010010100000000000000000110000100000000000001011011000000010100000001010000000000000000010100010000 
+	Parameter INIT_07 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010100000000000001100000011100011101111011111111101111100000000010011111000000010001111000010000 
 	Parameter INIT_08 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INIT_09 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter INIT_0A bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
@@ -532,7 +532,7 @@ WARNING: [Synth 8-3917] design TOP has port GND driven by constant 0
 WARNING: [Synth 8-3331] design player_driver has unconnected port RST
 WARNING: [Synth 8-3331] design player_driver has unconnected port VALID
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 330.277 ; gain = 123.566
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 331.016 ; gain = 124.531
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -542,7 +542,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 330.277 ; gain = 123.566
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 331.016 ; gain = 124.531
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 182 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -566,16 +566,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMS32, RAMS32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32): 4 instances
   RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 616.906 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 617.449 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -583,7 +583,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property MARK_DEBUG = true for X_POS[1]. (constraint file  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/constrs_1/new/My_constraint.xdc, line 85).
 Applied set_property MARK_DEBUG = true for Y_POS[0]. (constraint file  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/constrs_1/new/My_constraint.xdc, line 94).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "H_SYNC" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "V_SYNC" won't be mapped to RAM because it is too sparse
@@ -593,7 +593,7 @@ INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to lo
 INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/player_driver.vhd:124]
 WARNING: [Synth 8-327] inferring latch for variable 'SHOW_reg' [Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/background.vhd:102]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -685,7 +685,7 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 616.906 ; gain = 410.195
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -697,9 +697,9 @@ WARNING: [Synth 8-3917] design TOP has port GND driven by constant 0
 WARNING: [Synth 8-3331] design player_driver has unconnected port RST
 WARNING: [Synth 8-3331] design player_driver has unconnected port VALID
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Parallel Reinference  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 617.449 ; gain = 410.965
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -765,14 +765,9 @@ WARNING: [Synth 8-3332] Sequential element (Y_START_reg[9]) is unused and will b
 INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[0]' (FDE) to 'pd/PLAYER_X_reg[0]'
 INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[1]' (FDE) to 'pd/PLAYER_X_reg[0]'
 INFO: [Synth 8-3886] merging instance 'pd/x_reg[0]' (FDE) to 'pd/x_reg[1]'
-INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[2]' (FDE) to 'pd/PLAYER_X_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[3]' (FDE) to 'pd/PLAYER_X_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[4]' (FDE) to 'pd/PLAYER_X_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[5]' (FDE) to 'pd/PLAYER_X_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[3]' (FDE) to 'pd/new_x_reg[8]'
 INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[7]' (FDE) to 'pd/PLAYER_X_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pd/x_reg[1]' (FDE) to 'pd/x_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pd/x_reg[2]' (FDE) to 'pd/x_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pd/x_reg[3]' (FDE) to 'pd/x_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pd/x_reg[3]' (FDE) to 'pd/x_reg[8]'
 INFO: [Synth 8-3886] merging instance 'pd/PLAYER_B_reg[0]' (FDSE) to 'pd/PLAYER_B_reg[1]'
 INFO: [Synth 8-3886] merging instance 'pd/PLAYER_B_reg[1]' (FDSE) to 'pd/PLAYER_B_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pd/PLAYER_B_reg[2]' (FDSE) to 'pd/PLAYER_B_reg[3]'
@@ -803,12 +798,11 @@ INFO: [Synth 8-3886] merging instance 'pd/PLAYER_X_reg[2]' (FDE) to 'pd/PLAYER_X
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pd/\PLAYER_X_reg[3] )
 INFO: [Synth 8-3886] merging instance 'pd/PLAYER_X_reg[4]' (FDE) to 'pd/PLAYER_X_reg[5]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pd/\PLAYER_X_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pd/\x_reg[4] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pd/\x_reg[5] )
-WARNING: [Synth 8-3332] Sequential element (x_reg[5]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (x_reg[4]) is unused and will be removed from module player_driver.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pd/\x_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[5]) is unused and will be removed from module player_driver.
+WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[4]) is unused and will be removed from module player_driver.
+WARNING: [Synth 8-3332] Sequential element (new_x_reg[3]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (x_reg[3]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (x_reg[2]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (x_reg[1]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (x_reg[0]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (PLAYER_G_reg[3]) is unused and will be removed from module player_driver.
@@ -824,11 +818,6 @@ WARNING: [Synth 8-3332] Sequential element (PLAYER_B_reg[0]) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[0]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (new_x_reg[0]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (new_x_reg[1]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (new_x_reg[2]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (new_x_reg[3]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (new_x_reg[4]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[4]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (new_x_reg[5]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (new_x_reg[7]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (PLAYER_G_reg[2]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (PLAYER_B_reg[7]) is unused and will be removed from module player_driver.
@@ -847,15 +836,14 @@ WARNING: [Synth 8-3332] Sequential element (PLAYER_R_reg[7]) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[1]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[2]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[3]) is unused and will be removed from module player_driver.
-WARNING: [Synth 8-3332] Sequential element (PLAYER_X_reg[5]) is unused and will be removed from module player_driver.
 INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[6]' (FDE) to 'pd/PLAYER_X_reg[6]'
 INFO: [Synth 8-3886] merging instance 'pd/new_x_reg[8]' (FDE) to 'pd/PLAYER_X_reg[8]'
 WARNING: [Synth 8-3332] Sequential element (new_x_reg[6]) is unused and will be removed from module player_driver.
 WARNING: [Synth 8-3332] Sequential element (new_x_reg[8]) is unused and will be removed from module player_driver.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:49 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:49 . Memory (MB): peak = 617.449 ; gain = 410.965
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -869,10 +857,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:01:00 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:06 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:00 . Memory (MB): peak = 616.906 ; gain = 410.195
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:06 . Memory (MB): peak = 617.449 ; gain = 410.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -884,16 +872,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:01:02 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:07 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:54 ; elapsed = 00:01:02 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:58 ; elapsed = 00:01:07 . Memory (MB): peak = 621.375 ; gain = 414.891
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:54 ; elapsed = 00:01:02 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:58 ; elapsed = 00:01:07 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -904,7 +892,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:08 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -917,7 +905,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:08 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -929,7 +917,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:08 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -947,12 +935,12 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BUFG       |     2|
 |2     |CARRY4     |   196|
-|3     |LUT1       |   230|
-|4     |LUT2       |   351|
-|5     |LUT3       |   111|
-|6     |LUT4       |   128|
-|7     |LUT5       |    85|
-|8     |LUT6       |   194|
+|3     |LUT1       |   227|
+|4     |LUT2       |   349|
+|5     |LUT3       |   107|
+|6     |LUT4       |   131|
+|7     |LUT5       |    87|
+|8     |LUT6       |   197|
 |9     |LUT6_2     |    50|
 |10    |MUXCY      |    29|
 |11    |PLLE2_BASE |     1|
@@ -962,7 +950,7 @@ Report Cell Usage:
 |15    |XORCY      |    27|
 |16    |FD         |    45|
 |17    |FDR        |    18|
-|18    |FDRE       |   170|
+|18    |FDRE       |   176|
 |19    |FDSE       |     8|
 |20    |LD         |     1|
 |21    |IBUF       |     4|
@@ -973,7 +961,7 @@ Report Instance Areas:
 +------+----------------+-----------------------+------+
 |      |Instance        |Module                 |Cells |
 +------+----------------+-----------------------+------+
-|1     |top             |                       |  1690|
+|1     |top             |                       |  1695|
 |2     |  pll           |PLL_9MHz               |     1|
 |3     |  disp_drive    |display_driver         |   130|
 |4     |  spi_driver    |touch_driver_picoblaze |   244|
@@ -981,14 +969,14 @@ Report Instance Areas:
 |6     |    program_rom |touch_driver           |     1|
 |7     |  rectangle1    |draw_rectangle         |    49|
 |8     |  background1   |background             |   990|
-|9     |  pd            |player_driver          |   122|
+|9     |  pd            |player_driver          |   127|
 +------+----------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 621.344 ; gain = 414.633
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 621.375 ; gain = 414.891
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 78 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 621.344 ; gain = 118.816
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 621.344 ; gain = 414.633
+Synthesis finished with 0 errors, 0 critical warnings and 72 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 621.375 ; gain = 119.191
+Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:09 . Memory (MB): peak = 621.375 ; gain = 414.891
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 378 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1006,8 +994,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-221 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+215 Infos, 80 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 621.344 ; gain = 409.027
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.155 . Memory (MB): peak = 621.344 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 21 15:55:31 2016...
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 621.375 ; gain = 409.172
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 621.375 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 21 16:26:08 2016...
