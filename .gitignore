@@ -9,13 +9,20 @@
 #########
 #Exclude all
 #########
+!*.openPicIde   # Project file for OpenPICIDE
+!*.psm          # Assembly files for picoBlaze
+!*.asm
 *
 *.pdf
 *.cache
 !*.md
-!*/
+!*/*.psm
+!*/*.asm
 !.gitignore
 webtalk_pa.xml
+#########
+#   OpenPicIDE
+#########
 ###########################################################################
 ##	VIVADO
 ###########################################################################
@@ -92,8 +99,3 @@ webtalk_pa.xml
 !*.elf
 !*.bmm
 !*.xmp
-#########
-#   OpenPicIDE
-#########
-!*.openPicIde   # Project file for OpenPICIDE
-!*.psm          # Assembly files for picoBlaze

@@ -16,17 +16,15 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
 read_vhdl -library xil_defaultlib {
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/touch_driver.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/rectangle.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/display_driver.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/PLL_9MHz.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/TOP.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/line.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/algoritme.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6_design_template.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/touch_driver.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/background.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/player_driver.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/TOP.vhd
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

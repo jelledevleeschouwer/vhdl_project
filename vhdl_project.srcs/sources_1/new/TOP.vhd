@@ -43,7 +43,8 @@ entity TOP is
            DCLK    :out STD_LOGIC;
            MOSI    :out STD_LOGIC;
            MISO    :in STD_LOGIC;
-           BUSY    :in STD_LOGIC
+           BUSY    :in STD_LOGIC;
+           Y_L     :out STD_LOGIC_VECTOR(3 downto 0)
            );
 end TOP;
 
@@ -88,7 +89,8 @@ component touch_driver_picoblaze is
         CLK  : in std_logic;
         RST  : in std_logic;
         X_POS: out std_logic_vector(9 downto 0);
-        Y_POS: out std_logic_vector(9 downto 0)
+        Y_POS: out std_logic_vector(9 downto 0);
+        Y_L: out std_logic_vector(3 downto 0)
     );
 end component;
 --Hardware that generates a control signal to draw a rectangle
@@ -159,11 +161,13 @@ component player_driver is
         Y_TOUCH  : in STD_LOGIC_VECTOR (9 downto 0);
         X_POS    : in STD_LOGIC_VECTOR (9 downto 0);
         Y_POS    : in STD_LOGIC_VECTOR (9 downto 0);
+        LANE     : out STD_LOGIC_VECTOR (1 downto 0);
         PLAYER_X : out STD_LOGIC_VECTOR (9 downto 0);
         PLAYER_R : out STD_LOGIC_VECTOR (7 downto 0);
         PLAYER_G : out STD_LOGIC_VECTOR (7 downto 0);
         PLAYER_B : out STD_LOGIC_VECTOR (7 downto 0);
-        PLAYER_V : out STD_LOGIC
+        PLAYER_V : out STD_LOGIC;
+        SEED     : out STD_LOGIC
     );
 end component;
 
@@ -190,11 +194,13 @@ signal SHOW_BG    : std_logic;
 
 signal V_SYNC_INT : std_logic;
 
+signal PLAYER_LANE : STD_LOGIC_VECTOR (1 downto 0);
 signal PLAYER_X : STD_LOGIC_VECTOR (9 downto 0);
 signal PLAYER_R : STD_LOGIC_VECTOR (7 downto 0);
 signal PLAYER_G : STD_LOGIC_VECTOR (7 downto 0);
 signal PLAYER_B : STD_LOGIC_VECTOR (7 downto 0);
 signal PLAYER_V : STD_LOGIC;
+signal SEED     : STD_LOGIC;
 
 begin
 
@@ -205,18 +211,20 @@ V_SYNC <= V_SYNC_INT;
 ---------------------------------------
 pll:        PLL_9MHz       port map (CLK=>CLK,RST=>RST,CLK_9MHz=>P_CLK_9MHz);
 disp_drive: display_driver port map (P_CLK=>P_CLK_9MHz,RST=>RST,H_SYNC=>H_SYNC,V_SYNC=>V_SYNC_INT,DISP_EN=>DISP_EN,VALID=>VALID,X_POS=>X_POS,Y_POS=>Y_POS);
-spi_driver: touch_driver_picoblaze port map (CS=>CS, DCLK=>DCLK, MOSI=>MOSI, VALID=>TOUCH_VALID,BUSY=>BUSY, MISO=>MISO,CLK=>CLK,RST=>RST,X_POS=>TOUCH_X,Y_POS=>TOUCH_Y);
+spi_driver: touch_driver_picoblaze port map (CS=>CS, DCLK=>DCLK, MOSI=>MOSI,
+                                             VALID=>TOUCH_VALID,BUSY=>BUSY,
+                                             MISO=>MISO,CLK=>CLK,RST=>RST,X_POS=>TOUCH_X,Y_POS=>TOUCH_Y,
+                                         Y_L => Y_L);
 rectangle1: draw_rectangle port map (X_CURRENT=>X_POS,Y_CURRENT=>Y_POS,VISIBLE_AREA=>VALID,X_START=>X_START,Y_START=>Y_START,X_STOP=>X_STOP,Y_STOP=>Y_STOP,SHOW=>SHOW);
 --line1:      draw_line           port map (X_CURRENT=>X_POS,Y_CURRENT=>Y_POS,VISIBLE_AREA=>VALID,X_START=>"0000110010",Y_START=>"0000110010",X_STOP=>"0001100000",Y_STOP=>"0001100000",SHOW=>SHOW);
 --buffer for the clock made by the pll
 b0:         BUFG           port map (O => P_CLK, I => P_CLK_9MHz);
 background1: background port map (X_POS=>X_POS, Y_POS=>Y_POS, VISIBLE=>VALID, SHOW=>SHOW_BG);
---algo1:      algoritme port map(CLK=>CLK,RST=>RST,DISP_EN=>VALID,X_START_IN=>"0000000000",Y_START_IN=>"0000000000",X_STOP_IN=>"0000001010",Y_STOP_IN=>"0000001010",X_START_OUT=>X_START,Y_START_OUT=>Y_START,X_STOP_OUT=>X_STOP,Y_STOP_OUT=>Y_STOP);
 pd: player_driver port map (CLK=>CLK,RST=>RST,V_SYNC=>V_SYNC_INT,VALID=>VALID,
                             X_TOUCH=>NEW_X,Y_TOUCH=>NEW_Y,X_POS=>X_POS,
-                            Y_POS=>Y_POS,PLAYER_X=>PLAYER_X,
+                            Y_POS=>Y_POS, LANE=>PLAYER_LANE, PLAYER_X=>PLAYER_X,
                             PLAYER_R=>PLAYER_R,PLAYER_G=>PLAYER_G,PLAYER_B=>PLAYER_B,
-                            PLAYER_V=>PLAYER_V);
+                            PLAYER_V=>PLAYER_V, SEED=>SEED);
 --------------------------------------
 --control signals display
 --------------------------------------
@@ -233,15 +241,13 @@ begin
     end if;
 end process;
 
-update_rect: process(CLK)
+update_rect: process(V_SYNC_INT)
 begin
-    if (CLK'event and CLK='1') then
-        if (V_SYNC_INT = '0') then
-            X_START <= std_logic_vector(unsigned(NEW_X));
-            Y_START <= std_logic_vector(unsigned(NEW_Y));
-            X_STOP <= std_logic_vector(unsigned(NEW_X) + 20);
-            Y_STOP <= std_logic_vector(unsigned(NEW_Y) + 20);
-        end if;
+    if (V_SYNC_INT = '0') then
+        X_START <= std_logic_vector(unsigned(NEW_X));
+        Y_START <= std_logic_vector(unsigned(NEW_Y));
+        X_STOP <= std_logic_vector(unsigned(NEW_X) + 20);
+        Y_STOP <= std_logic_vector(unsigned(NEW_Y) + 20);
     end if;
 end process;
 
@@ -252,9 +258,7 @@ if(CLK'event and CLK='1') then
     RED <= x"00";
     BLUE <= x"00";
     GREEN <= x"00";
-    if (SHOW = '1') then
-        GREEN <= x"FF";
-    elsif (PLAYER_V = '1') then
+    if (PLAYER_V = '1') then
         RED <= PLAYER_R;
         GREEN <= PLAYER_G;
         BLUE<= PLAYER_B;

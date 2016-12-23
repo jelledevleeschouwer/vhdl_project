@@ -14,7 +14,8 @@ entity touch_driver_picoblaze is
         CLK  : in std_logic;
         RST  : in std_logic;
         X_POS: out std_logic_vector(9 downto 0);
-        Y_POS: out std_logic_vector(9 downto 0)
+        Y_POS: out std_logic_vector(9 downto 0);
+        Y_L  : out std_logic_vector(3 downto 0)
     );
 end touch_driver_picoblaze;
 
@@ -252,6 +253,7 @@ begin
   output_ports: process(CLK)
       variable x: unsigned(9 downto 0);
       variable y: unsigned(9 downto 0);
+      variable i: unsigned(7 downto 0);
   begin
     if CLK'event and CLK = '1' then
       VALID <= '0';
@@ -264,17 +266,20 @@ begin
         end if;
         if port_id(1) = '1' then
             -- Multiply X measurement by 2
-            x := unsigned(out_port) & "00";
+            x := "0" & unsigned(out_port) & "0";
         end if;
         if port_id(2) = '1' then
-            y := "0" & unsigned(out_port) & "0";
+            -- Invert Y measurement
+            Y_L <= out_port(7 downto 4);
+            i := to_unsigned(255, 8) - unsigned(out_port);
+            y := "00" & i;
             VALID <= '1';
         end if;
       end if;
-    end if;
 
-    X_POS <= std_logic_vector(x);
-    Y_POS <= std_logic_vector(y);
+      X_POS <= std_logic_vector(x);
+      Y_POS <= std_logic_vector(y);
+    end if;
   end process output_ports;
 
   --

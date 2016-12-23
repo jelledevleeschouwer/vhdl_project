@@ -39,7 +39,7 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
     constant x1_b : signed(9 downto 0) := x0_b + lane_b;
     constant x2_b : signed(9 downto 0) := x1_b + lane_b;
     constant x3_b : signed(9 downto 0) := x2_b + lane_b;
-    constant x4_b : signed(9 downto 0) := (width srl 1) + width_b;
+    constant x4_b : signed(9 downto 0) := (width srl 1) - width_b;
     constant x5_b : signed(9 downto 0) := x4_b - lane_b;
     constant x6_b : signed(9 downto 0) := x5_b - lane_b;
     constant x7_b : signed(9 downto 0) := x6_b - lane_b;
@@ -47,7 +47,7 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
     constant x1_f : signed(9 downto 0) := x0_f + lane_f;
     constant x2_f : signed(9 downto 0) := x1_f + lane_f;
     constant x3_f : signed(9 downto 0) := x2_f + lane_f;
-    constant x4_f : signed(9 downto 0) := (width srl 1) + width_f;
+    constant x4_f : signed(9 downto 0) := (width srl 1) - width_f;
     constant x5_f : signed(9 downto 0) := x4_f - lane_f;
     constant x6_f : signed(9 downto 0) := x5_f - lane_f;
     constant x7_f : signed(9 downto 0) := x6_f - lane_f;
@@ -63,7 +63,7 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
 
     variable x : signed(9 downto 0);
     variable y : signed(9 downto 0);
-    
+
 begin
     x := signed(X_POS);
     y := signed(Y_POS);

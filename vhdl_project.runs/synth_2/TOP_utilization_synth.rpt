@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Wed Dec 21 16:26:08 2016
+| Date         : Fri Dec 23 12:47:17 2016
 | Host         : DESKTOP-I9KA4SE running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
 | Design       : TOP
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  897 |     0 |     17600 |  5.10 |
-|   LUT as Logic             |  873 |     0 |     17600 |  4.96 |
+| Slice LUTs*                |  979 |     0 |     17600 |  5.56 |
+|   LUT as Logic             |  955 |     0 |     17600 |  5.43 |
 |   LUT as Memory            |   24 |     0 |      6000 |  0.40 |
 |     LUT as Distributed RAM |   24 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  248 |     0 |     35200 |  0.70 |
-|   Register as Flip Flop    |  247 |     0 |     35200 |  0.70 |
-|   Register as Latch        |    1 |     0 |     35200 | <0.01 |
+| Slice Registers            |  251 |     0 |     35200 |  0.71 |
+|   Register as Flip Flop    |  219 |     0 |     35200 |  0.62 |
+|   Register as Latch        |   32 |     0 |     35200 |  0.09 |
 | F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -57,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 1     |          Yes |           - |        Reset |
+| 32    |          Yes |           - |        Reset |
 | 8     |          Yes |         Set |            - |
-| 239   |          Yes |       Reset |            - |
+| 211   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -93,7 +93,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   37 |     0 |       100 | 37.00 |
+| Bonded IOB                  |   41 |     0 |       100 | 41.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
@@ -149,15 +149,16 @@ Table of Contents
 +-----------+------+---------------------+
 |  Ref Name | Used | Functional Category |
 +-----------+------+---------------------+
-| LUT2      |  349 |                 LUT |
-| LUT6      |  247 |                 LUT |
-| FDRE      |  239 |        Flop & Latch |
-| CARRY4    |  206 |          CarryLogic |
-| LUT1      |  138 |                 LUT |
-| LUT5      |  137 |                 LUT |
-| LUT4      |  131 |                 LUT |
-| LUT3      |  107 |                 LUT |
-| OBUF      |   33 |                  IO |
+| LUT2      |  387 |                 LUT |
+| LUT6      |  249 |                 LUT |
+| CARRY4    |  229 |          CarryLogic |
+| FDRE      |  211 |        Flop & Latch |
+| LUT1      |  167 |                 LUT |
+| LUT5      |  150 |                 LUT |
+| LUT3      |  139 |                 LUT |
+| LUT4      |  128 |                 LUT |
+| OBUF      |   37 |                  IO |
+| LDCE      |   32 |        Flop & Latch |
 | RAMD32    |   24 |  Distributed Memory |
 | RAMS32    |    8 |  Distributed Memory |
 | RAMD64E   |    8 |  Distributed Memory |
@@ -166,7 +167,6 @@ Table of Contents
 | BUFG      |    2 |               Clock |
 | RAMB18E1  |    1 |        Block Memory |
 | PLLE2_ADV |    1 |               Clock |
-| LDCE      |    1 |        Flop & Latch |
 +-----------+------+---------------------+
 
 

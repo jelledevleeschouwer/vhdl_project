@@ -19,11 +19,13 @@ entity player_driver is
         Y_TOUCH  : in STD_LOGIC_VECTOR (9 downto 0);
         X_POS    : in STD_LOGIC_VECTOR (9 downto 0);
         Y_POS    : in STD_LOGIC_VECTOR (9 downto 0);
+        LANE     : out STD_LOGIC_VECTOR (1 downto 0);
         PLAYER_X : out STD_LOGIC_VECTOR (9 downto 0);
         PLAYER_R : out STD_LOGIC_VECTOR (7 downto 0);
         PLAYER_G : out STD_LOGIC_VECTOR (7 downto 0);
         PLAYER_B : out STD_LOGIC_VECTOR (7 downto 0);
-        PLAYER_V : out STD_LOGIC
+        PLAYER_V : out STD_LOGIC;
+        SEED     : out STD_LOGIC
     );
 end player_driver;
 
@@ -31,14 +33,6 @@ architecture Behavioral of player_driver is
 
     -- Prescaler enable signal
     signal EN_100 : STD_LOGIC;
-
-    -- FSM state type definition
-    type fsm_state_t is (
-        IDLE, LANE_L, LANE_C, LANE_R
-    );
-
-    -- FSM states
-    signal state, new_state : fsm_state_t;
 
     -- Constant values regarding the position of the player
     constant player_width: signed(9 downto 0) := to_signed(32, 10);
@@ -76,9 +70,7 @@ begin
         -- Horizontal boundaries
         constant half : signed(9 downto 0) := area_width srl 1;
         constant xl : signed(9 downto 0) := mid - half;
-        constant xll : signed(9 downto 0) := xl - area_width;
         constant xr : signed(9 downto 0) := mid + half;
-        constant xrr : signed(9 downto 0) := xr + area_width;
 
         -- Vertical boundaries
         constant top : signed(9 downto 0) := screen_height - area_height;
@@ -88,20 +80,26 @@ begin
         variable yt : signed(9 downto 0);
     begin
         if (CLK'event and CLK='1') then
+            SEED <= '0';
+
             xt := signed(X_TOUCH);
             yt := signed(Y_TOUCH);
 
             if (EN_100 = '1') then
                 if (yt >= top and yt < bottom) then
-                    if (xt >= xll and xt < xl) then
-                        PLAYER_X <= std_logic_vector(xll + half);
-                        new_x <= xll + half - (player_width srl 1) + 20;
+                    SEED <= '1';
+                    if (xt < xl) then
+                        LANE <= std_logic_vector(to_signed(1, 2));
+                        PLAYER_X <= std_logic_vector(to_signed(0, 10) + half);
+                        new_x <= to_signed(0, 10) + half - (player_width srl 1) + 20;
                     elsif (xt >= xl and xt <= xr) then
+                        LANE <= std_logic_vector(to_signed(2, 2));
                         PLAYER_X <= std_logic_vector(xl + half);
                         new_x <= xl + half - (player_width srl 1);
-                    elsif (xt > xr and xt <= xrr) then
-                        PLAYER_X <= std_logic_vector(xr + half);
-                        new_x <= xr + half - (player_width srl 1) - 20;
+                    elsif (xt > xr) then
+                        LANE <= std_logic_vector(to_signed(3, 2));
+                        PLAYER_X <= std_logic_vector(to_signed(479, 0) - half);
+                        new_x <= to_signed(479, 10) - half - (player_width srl 1) - 20;
                     end if;
                 end if;
             end if;
