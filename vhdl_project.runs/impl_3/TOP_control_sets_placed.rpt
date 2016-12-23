@@ -1,0 +1,72 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
+| Date         : Fri Dec 23 12:47:57 2016
+| Host         : Jasper-laptop running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
+| Design       : TOP
+| Device       : xc7z010
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    19 |
+| Unused register locations in slices containing registers |    45 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              19 |           10 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             131 |           43 |
+| Yes          | No                    | No                     |               8 |            2 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              85 |           24 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+|      Clock Signal     |           Enable Signal          |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+|  pll/CLK_9MHz         | disp_drive/H_SYNC_i_1_n_0        | RST_IBUF                         |                1 |              1 |
+|  bg1/SHOW_reg_i_2_n_0 |                                  |                                  |                1 |              1 |
+|  CLK_IBUF_BUFG        | block_gen/ADDR_A[3]_i_1_n_0      |                                  |                1 |              4 |
+|  CLK_IBUF_BUFG        | block_gen/POS_FIRST_O[3]_i_1_n_0 |                                  |                1 |              4 |
+|  CLK_IBUF_BUFG        | block_gen/DIN_A[28]_i_2_n_0      | block_gen/DIN_A[28]_i_1_n_0      |                2 |              7 |
+|  CLK_IBUF_BUFG        | GREEN[7]_i_1_n_0                 | BLUE[7]_i_1_n_0                  |                2 |              8 |
+|  CLK_IBUF_BUFG        | GREEN[7]_i_1_n_0                 | RED[7]_i_1_n_0                   |                1 |              8 |
+|  CLK_IBUF_BUFG        | RED[7]_i_2_n_0                   | RED[7]_i_1_n_0                   |                1 |              8 |
+|  CLK_IBUF_BUFG        | blue_sig[7]_i_1_n_0              | RST_IBUF                         |                3 |              8 |
+|  CLK_IBUF_BUFG        | green_sig[7]_i_1_n_0             | RST_IBUF                         |                2 |              8 |
+|  CLK_IBUF_BUFG        | red_sig[7]_i_1_n_0               | RST_IBUF                         |                2 |              8 |
+|  CLK_IBUF_BUFG        |                                  | RST_IBUF                         |                6 |             16 |
+|  pll/CLK_9MHz         |                                  | disp_drive/X_POS[8]_i_1_n_0      |                9 |             18 |
+|  CLK_IBUF_BUFG        |                                  |                                  |                9 |             18 |
+|  pll/CLK_9MHz         |                                  | RST_IBUF                         |                9 |             21 |
+|  CLK_IBUF_BUFG        |                                  | block_mover/delay[0]_i_1_n_0     |                6 |             24 |
+|  CLK_IBUF_BUFG        |                                  | delay[0]_i_1_n_0                 |                6 |             24 |
+|  CLK_IBUF_BUFG        |                                  | block_gen/count_value[0]_i_1_n_0 |                7 |             28 |
+|  CLK_IBUF_BUFG        | block_mover/WE_B3_out            | block_mover/DIN_B[28]_i_1_n_0    |               10 |             29 |
++-----------------------+----------------------------------+----------------------------------+------------------+----------------+
+
+

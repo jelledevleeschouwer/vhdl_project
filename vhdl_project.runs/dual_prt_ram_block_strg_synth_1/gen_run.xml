@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="dual_prt_ram_block_strg_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1482415703">
+  <File Type="RDS-PROPCONSTRS" Name="dual_prt_ram_block_strg_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="dual_prt_ram_block_strg.tcl"/>
+  <File Type="RDS-RDS" Name="dual_prt_ram_block_strg.vds"/>
+  <File Type="RDS-UTIL" Name="dual_prt_ram_block_strg_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="dual_prt_ram_block_strg_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="dual_prt_ram_block_strg.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="dual_prt_ram_block_strg_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="dual_prt_ram_block_strg_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dual_prt_ram_block_strg">
+    <File Path="$PSRCDIR/sources_1/ip/dual_prt_ram_block_strg_1/dual_prt_ram_block_strg.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="dual_prt_ram_block_strg"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dual_prt_ram_block_strg">
+    <File Path="$PSRCDIR/sources_1/ip/dual_prt_ram_block_strg_1/dual_prt_ram_block_strg.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="dual_prt_ram_block_strg"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
