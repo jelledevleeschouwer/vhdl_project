@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Jan 04 00:25:46 2017">
+<application name="pa" timeStamp="Fri Jan 06 22:30:27 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b8aa081f8170425d9b5b7b146888b227" type="ProjectID"/>
-<property name="ProjectIteration" value="218" type="ProjectIteration"/>
+<property name="ProjectIteration" value="219" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -35,15 +35,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="MarkDebug" value="22" type="JavaHandler"/>
 <property name="NewHardwareDashboard" value="2" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="116" type="JavaHandler"/>
-<property name="OpenProject" value="4" type="JavaHandler"/>
+<property name="OpenProject" value="5" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="10" type="JavaHandler"/>
 <property name="ProgramDevice" value="65" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="13" type="JavaHandler"/>
 <property name="ProjectSummary" value="13" type="JavaHandler"/>
-<property name="RecustomizeCore" value="8" type="JavaHandler"/>
+<property name="RecustomizeCore" value="10" type="JavaHandler"/>
 <property name="RefreshDevice" value="1" type="JavaHandler"/>
 <property name="ReportTimingSummary" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="216" type="JavaHandler"/>
+<property name="RunBitgen" value="218" type="JavaHandler"/>
 <property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="RunSchematic" value="16" type="JavaHandler"/>
 <property name="RunSynthesis" value="60" type="JavaHandler"/>
@@ -63,7 +63,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TimingConstraintsWizard" value="7" type="JavaHandler"/>
 <property name="ToggleViewNavigator" value="2" type="JavaHandler"/>
 <property name="ToolsTemplates" value="1" type="JavaHandler"/>
-<property name="UpdateSourceFiles" value="9" type="JavaHandler"/>
+<property name="UpdateSourceFiles" value="10" type="JavaHandler"/>
 <property name="ViewLayoutCmd" value="7" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="12" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="97" type="JavaHandler"/>
@@ -73,33 +73,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ZoomFit" value="1" type="JavaHandler"/>
 <property name="ZoomIn" value="4" type="JavaHandler"/>
 <property name="ZoomOut" value="27" type="JavaHandler"/>
-</item>
-<item name="Gui Resources Info">
-<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, Auto Connect" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV, (String" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Hardware Manager, Open Target], 32, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, Program device" value="3" type="GuiResourceData"/>
-<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="2" type="GuiResourceData"/>
-<property name="TOP.vhd, 116, 92" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 126, 203" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 138, 211" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 161, 213" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 161, 213, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 237, 249" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 237, 277" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 251, 217" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 258, 238" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 291, 257" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 318, 193" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 328, 217" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 343, 240" value="1" type="GuiResourceData"/>
-<property name="TOP.vhd, 376, 336" value="1" type="GuiResourceData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="48" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="21" type="TclMode"/>
 </item>
 </section>
 </application>
