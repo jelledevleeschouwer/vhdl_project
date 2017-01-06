@@ -129,7 +129,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/test16_converted.coe">
+      <File Path="//Mac/Home/Documents/School/2016-2017/Programmable_Logic/test16_converted.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -263,14 +263,13 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_2" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_2" IncludeInArchive="true">
+    <Run Id="synth_2" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design">
           <Option Id="FlattenHierarchy">1</Option>
         </Step>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="dual_prt_ram_block_strg_synth_1" Type="Ft3:Synth" SrcSet="dual_prt_ram_block_strg" Part="xc7z010clg400-1" ConstrsSet="dual_prt_ram_block_strg" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/dual_prt_ram_block_strg_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
@@ -279,12 +278,11 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="blk_mem_player_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_player" Part="xc7z010clg400-1" ConstrsSet="blk_mem_player" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/blk_mem_player_synth_1" IncludeInArchive="true">
+    <Run Id="blk_mem_player_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_player" Part="xc7z010clg400-1" ConstrsSet="blk_mem_player" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="impl_2" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." SynthRun="synth_2" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
@@ -314,7 +312,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="impl_3" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_3" SynthRun="synth_2" IncludeInArchive="true">
+    <Run Id="impl_3" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_2" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -327,7 +325,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="blk_mem_player_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="blk_mem_player" Description="Default settings for Implementation." SynthRun="blk_mem_player_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
