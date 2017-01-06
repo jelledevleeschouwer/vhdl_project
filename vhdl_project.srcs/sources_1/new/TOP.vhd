@@ -158,10 +158,11 @@ end component;
 
 -- Component to draw the background
 component background is
-    Port ( X_POS : in STD_LOGIC_VECTOR(9 downto 0);
-           Y_POS : in STD_LOGIC_VECTOR(9 downto 0);
-           VISIBLE : in STD_LOGIC;
-           SHOW : out STD_LOGIC);
+    Port ( CLK      : in STD_LOGIC;
+           X_POS    : in STD_LOGIC_VECTOR(9 downto 0);
+           Y_POS    : in STD_LOGIC_VECTOR(9 downto 0);
+           VISIBLE  : in STD_LOGIC;
+           SHOW     : out STD_LOGIC);
 end component;
 
 -- Component for position of player
@@ -288,7 +289,7 @@ block_mover:    move_blocks             port map (CLK=>CLK,RST=>RST,V_SYNC=>V_SY
 block_disp:     draw_blocks             port map (CLK=>CLK,RST=>RST,XPOS=>X_POS,YPOS=>Y_POS,DISP_EN=>VALID,DOUT_B=>doutb_sig,ADDR_B=>ADDR_B_1,SHOW=>DRAW,POS_FIRST=>first_block,LOST=>LOST,LANE=>PLAYER_LANE);
 block_ram:      dual_prt_ram_block_strg port map (clka=>CLK,wea=>write_en_a_sig,addra=>addra_sig,dina=>dina_sig,douta=>douta_sig,clkb=>CLK,web=>write_en_b_sig,addrb=>addrb_sig,dinb=>dinb_sig,doutb=>doutb_sig);
 block_gen:      block_generator         port map (CLK=>CLK,RST=>RST,RAND_NUM=>RAND_NUM,WRITE_EN_A=>write_en_a_sig,ADDR_A=>addra_sig,DIN_A=>dina_sig,POS_FIRST_O=>first_block);
-bg1:            background              port map (X_POS=>XPOS_BG,Y_POS=>YPOS_BG,VISIBLE=>VALID,SHOW=>SHOW_BG);
+bg1:            background              port map (CLK=>CLK,X_POS=>XPOS_BG,Y_POS=>YPOS_BG,VISIBLE=>VALID,SHOW=>SHOW_BG);
 spi_driver:     touch_driver_picoblaze  port map (CS=>CS_I, DCLK=>DCLK_I, MOSI=>MOSI_I, VALID=>TOUCH_VALID,BUSY=>BUSY_I, MISO=>MISO_I,CLK=>CLK,RST=>RST, X_POS=>TOUCH_X,Y_POS=>TOUCH_Y);
 pd:             player_driver           port map (CLK=>CLK,PCLK=>P_CLK_9MHz,RST=>RST,V_SYNC=>V_SYNC_SIG,VALID=>VALID, X_TOUCH=>NEW_X,Y_TOUCH=>NEW_Y,X_POS=>XPOS_BG, Y_POS=>YPOS_BG, LANE=>PLAYER_LANE, PLAYER_X=>PLAYER_X, PLAYER_R=>PLAYER_R,PLAYER_G=>PLAYER_G,PLAYER_B=>PLAYER_B, PLAYER_V=>PLAYER_V, SEED=>SEED);
 rng:            rand_driver             port map (SEED => SEED, RAND=>RAND_NUM, CLK=>CLK, RST => RST);

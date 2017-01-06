@@ -54,6 +54,8 @@ architecture Behavioral of player_driver is
     
     signal addr_int: std_logic_vector(13 downto 0);
     signal data_int: std_logic_vector(11 downto 0);
+    signal opaque: std_logic;
+    signal show: std_logic;
 begin
 
 b0: blk_mem_player port map (clka => CLK, addra => addr_int, douta => data_int);
@@ -127,18 +129,22 @@ b0: blk_mem_player port map (clka => CLK, addra => addr_int, douta => data_int);
     end process; -- EOF update_player
     
     -- Update colors of player with new color coming from block ROM
-    update_color: process(data_int)
+    update_color: process(CLK)
     begin
-        if (data_int = x"000") then
-            PLAYER_V <= '0';
-        else
-            PLAYER_V <= '1';
-            PLAYER_R <= data_int(11 downto 8) & "0000";
-            PLAYER_G <= data_int(7 downto 4) & "0000";
-            PLAYER_B <= data_int(3 downto 0) & "0000";
+        if (CLK'event and CLK='1') then
+            if (data_int = x"000") then
+                opaque <= '0';
+            else
+                opaque <= '1';
+            end if;
         end if;
     end process;
 
+    PLAYER_R <= data_int(11 downto 8) & "0000";
+    PLAYER_G <= data_int(7 downto 4) & "0000";
+    PLAYER_B <= data_int(3 downto 0) & "0000";
+    PLAYER_V <= show and opaque;
+    
     -- Draw player on screen
     draw_player: process(PCLK)
         variable xt : signed(9 downto 0);
@@ -150,13 +156,15 @@ b0: blk_mem_player port map (clka => CLK, addra => addr_int, douta => data_int);
             xt := signed(X_POS);
             yt := signed(Y_POS);
             
+            show <= '0';
+            
             if (xt >= x and xt < x + player_width and yt >= y and yt < y + player_height) then
                 addr_nxt := addr_nxt + 1;
                 if (addr_nxt = to_unsigned(9216, 14)) then 
                     addr_nxt := to_unsigned(0, 14);
-                end if;
-                
+                end if;                
                 addr_int <= std_logic_vector(addr_nxt);
+                show <= '1';
             end if;
         end if;
     end process;
