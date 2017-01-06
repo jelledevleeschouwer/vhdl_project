@@ -35,11 +35,8 @@ architecture bench of display_driver_tb is
              V_SYNC : out STD_LOGIC;
              DISP_EN : out STD_LOGIC;
              VALID : out STD_LOGIC;
-             X_POS : out STD_LOGIC_VECTOR (9 downto 0);
-             Y_POS : out STD_LOGIC_VECTOR (9 downto 0);
-             RED : out STD_LOGIC_VECTOR (3 downto 0);
-             GREEN : out STD_LOGIC_VECTOR (3 downto 0);
-             BLUE : out STD_LOGIC_VECTOR (2 downto 0)         
+             X_POS : out STD_LOGIC_VECTOR (8 downto 0);
+             Y_POS : out STD_LOGIC_VECTOR (8 downto 0)
              );
   end component;
 
@@ -49,13 +46,10 @@ architecture bench of display_driver_tb is
   signal V_SYNC: STD_LOGIC;
   signal DISP_EN: STD_LOGIC;
   signal VALID: STD_LOGIC;
-  signal X_POS: STD_LOGIC_VECTOR (9 downto 0);
-  signal Y_POS: STD_LOGIC_VECTOR (9 downto 0);
-  signal RED: STD_LOGIC_VECTOR (3 downto 0);
-  signal GREEN: STD_LOGIC_VECTOR (3 downto 0);
-  signal BLUE: STD_LOGIC_VECTOR (2 downto 0) ;
+  signal X_POS: STD_LOGIC_VECTOR (8 downto 0);
+  signal Y_POS: STD_LOGIC_VECTOR (8 downto 0) ;
 
-  constant clock_period: time := 1 ns;
+  constant clock_period: time := 8 ns;
 
 begin
 
@@ -66,19 +60,19 @@ begin
                                  DISP_EN => DISP_EN,
                                  VALID   => VALID,
                                  X_POS   => X_POS,
-                                 Y_POS   => Y_POS,
-                                 RED     => RED,
-                                 GREEN   => GREEN,
-                                 BLUE    => BLUE );
+                                 Y_POS   => Y_POS );
 
   stimulus: process
   begin
   
     -- Put initialisation code here
     RST<='1';
-    wait for clock_period*5;
+    wait for clock_period*2;
     RST<='0';
     wait;
+
+    -- Put test bench stimulus code here
+
   end process;
 
   clocking: process

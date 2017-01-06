@@ -37,8 +37,8 @@ entity display_driver is
            
            --control signals for the algoritme
            VALID : out STD_LOGIC;
-           X_POS : out STD_LOGIC_VECTOR (9 downto 0); --only valid if DISP_EN = '1';
-           Y_POS : out STD_LOGIC_VECTOR (9 downto 0)  --only valid if DISP_EN = '1';
+           X_POS : out STD_LOGIC_VECTOR (8 downto 0); --only valid if DISP_EN = '1';
+           Y_POS : out STD_LOGIC_VECTOR (8 downto 0)  --only valid if DISP_EN = '1';
            
            --Should RGB be placed here? or controlled by the algorithm?
 --           RED : out STD_LOGIC_VECTOR (7 downto 0);
@@ -147,17 +147,23 @@ begin
             
             --determine if we are in the valid region to display something
             if( ( horz_count >= ( h_pulse_width + h_front_porch ) ) and 
-                ( horz_count <  ( h_pulse_width + h_front_porch + h_disp_period ) ) and 
+                ( horz_count <=  ( h_pulse_width + h_front_porch + h_disp_period ) ) and 
                 ( vert_count >= ( v_pulse_width + v_front_porch ) ) and 
-                ( vert_count <  ( v_pulse_width + v_front_porch + v_disp_period ))) then
+                ( vert_count <=  ( v_pulse_width + v_front_porch + v_disp_period ))) then
                 
                 DISP_EN <= '1';
                 VALID   <= '1';
-                X_POS   <= conv_std_logic_vector((horz_count-h_pulse_width-h_front_porch),10);
-                Y_POS   <= conv_std_logic_vector((vert_count-v_pulse_width-v_front_porch),10);
+--                BLUE    <= X"00";
+--                RED     <= X"FF";
+--                GREEN   <= X"00";
+                X_POS   <= conv_std_logic_vector((horz_count-h_pulse_width-h_front_porch),9);
+                Y_POS   <= conv_std_logic_vector((vert_count-v_pulse_width-v_front_porch),9);
             else
                 DISP_EN <= '0';
                 VALID   <= '0';
+--                BLUE    <= X"00";
+--                RED     <= X"00";
+--                GREEN   <= X"00";
                 X_POS   <= (others=>'0');
                 Y_POS   <= (others=>'0'); 
             end if;

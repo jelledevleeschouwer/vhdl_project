@@ -35,22 +35,22 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
     constant y7 : signed(9 downto 0) := y6 + 64;
     constant y8 : signed(9 downto 0) := y7 + 72;
 
-    constant x0_b : signed(9 downto 0) := (width srl 1) + width_b;
-    constant x1_b : signed(9 downto 0) := x0_b + lane_b;
-    constant x2_b : signed(9 downto 0) := x1_b + lane_b;
-    constant x3_b : signed(9 downto 0) := x2_b + lane_b;
-    constant x4_b : signed(9 downto 0) := (width srl 1) - width_b;
-    constant x5_b : signed(9 downto 0) := x4_b - lane_b;
-    constant x6_b : signed(9 downto 0) := x5_b - lane_b;
-    constant x7_b : signed(9 downto 0) := x6_b - lane_b;
-    constant x0_f : signed(9 downto 0) := (width srl 1) + width_f;
-    constant x1_f : signed(9 downto 0) := x0_f + lane_f;
-    constant x2_f : signed(9 downto 0) := x1_f + lane_f;
-    constant x3_f : signed(9 downto 0) := x2_f + lane_f;
-    constant x4_f : signed(9 downto 0) := (width srl 1) - width_f;
-    constant x5_f : signed(9 downto 0) := x4_f - lane_f;
-    constant x6_f : signed(9 downto 0) := x5_f - lane_f;
-    constant x7_f : signed(9 downto 0) := x6_f - lane_f;
+    constant x0_b : signed(9 downto 0) := (width srl 1) + width_b;  --240 + 32 = 272
+    constant x1_b : signed(9 downto 0) := x0_b + lane_b;            --272 + 64 = 336
+    constant x2_b : signed(9 downto 0) := x1_b + lane_b;            --336 + 64 = 400
+    constant x3_b : signed(9 downto 0) := x2_b + lane_b;            --400 + 64 = 464
+    constant x4_b : signed(9 downto 0) := (width srl 1) + width_b;  --240 + 32 = 272
+    constant x5_b : signed(9 downto 0) := x4_b - lane_b;            --272 - 64 = 208
+    constant x6_b : signed(9 downto 0) := x5_b - lane_b;            --208 - 64 = 144
+    constant x7_b : signed(9 downto 0) := x6_b - lane_b;            --144 - 64 = 80
+    constant x0_f : signed(9 downto 0) := (width srl 1) + width_f;  --240 + 96 = 336
+    constant x1_f : signed(9 downto 0) := x0_f + lane_f;            --336 + 192 = 528
+    constant x2_f : signed(9 downto 0) := x1_f + lane_f;            --432 + 192 = 624
+    constant x3_f : signed(9 downto 0) := x2_f + lane_f;            --528 + 192 = 816
+    constant x4_f : signed(9 downto 0) := (width srl 1) + width_f;  --240 + 96 = 336
+    constant x5_f : signed(9 downto 0) := x4_f - lane_f;            --336 - 192 = 144
+    constant x6_f : signed(9 downto 0) := x5_f - lane_f;            --144 - 192 = -48
+    constant x7_f : signed(9 downto 0) := x6_f - lane_f;            ---48 - 192 = -240
 
     variable r0 : signed (19 downto 0);
     variable r1 : signed (19 downto 0);
@@ -63,23 +63,31 @@ background_proc: process(X_POS, Y_POS, VISIBLE)
 
     variable x : signed(9 downto 0);
     variable y : signed(9 downto 0);
-
+    
 begin
     x := signed(X_POS);
     y := signed(Y_POS);
 
     if (VISIBLE = '1') then
         if y >= y0 then
-            r0 := (dy * (x - x0_b)) - ((x0_f - x0_b) * (y - y0));
-            r1 := (dy * (x - x1_b)) - ((x1_f - x1_b) * (y - y0));
-            r2 := (dy * (x - x2_b)) - ((x2_f - x2_b) * (y - y0));
-            r3 := (dy * (x - x3_b)) - ((x3_f - x3_b) * (y - y0));
-            r4 := (dy * (x - x4_b)) - ((x4_f - x4_b) * (y - y0));
-            r5 := (dy * (x - x5_b)) - ((x5_f - x5_b) * (y - y0));
-            r6 := (dy * (x - x6_b)) - ((x6_f - x6_b) * (y - y0));
-            r7 := (dy * (x - x7_b)) - ((x7_f - x7_b) * (y - y0));
+            -- equation of a line
+            --                     Y-YO = ((Y1-YO)/(X1-X0)) * (X - X0)
+            --
+            --           (X1-XO)*(Y-YO) = (Y1-YO)*(X-XO)    ->Y1-YO = cte, eerste lijn en einde vh scherm, = dY
+            --           (X1-XO)*(Y-YO) = dY * (X-XO)
+            --           (dY * (X- XO)  = (X1-X0)*(Y-YO)    -> X0 = Xb, X1 = Xf
+            --           (dY * (X- Xb)  = (Xf - Xb) * (Y - Yo)
+            r0 := (dy * (x - x0_b)) - ((x0_f - x0_b) * (y - y0)); --verticale lijn 1
+            r1 := (dy * (x - x1_b)) - ((x1_f - x1_b) * (y - y0)); --verticale lijn 2
+            r2 := (dy * (x - x2_b)) - ((x2_f - x2_b) * (y - y0)); --verticale lijn 3
+            r3 := (dy * (x - x3_b)) - ((x3_f - x3_b) * (y - y0)); --verticale lijn 4
+            r4 := (dy * (x - x4_b)) - ((x4_f - x4_b) * (y - y0)); --verticale lijn 5
+            r5 := (dy * (x - x5_b)) - ((x5_f - x5_b) * (y - y0)); --verticale lijn 6
+            r6 := (dy * (x - x6_b)) - ((x6_f - x6_b) * (y - y0)); --verticale lijn 7
+            r7 := (dy * (x - x7_b)) - ((x7_f - x7_b) * (y - y0)); --verticale lijn 8
 
-            if
+            if 
+            -- horizontal lines
             ((y >= y0 and y <= y0 + 1) or (y = y0 + 3)) or
             (y >= y2 and y < y2 + 1) or
             (y > y3 and y <= y3 + 1) or
@@ -89,7 +97,7 @@ begin
             (y >= y7 and y <= y7 + 2) or
             (y >= y8 and y <= y8 + 2) or
 
-            -- Perspective
+            -- Perspective ("verticals")
             (r0 > -dy - de and r0 <= de) or
             (r1 > -dy - de and r1 <= de) or
             (r2 > -dy - de and r2 <= de) or

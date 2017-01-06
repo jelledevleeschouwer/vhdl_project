@@ -10,27 +10,36 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.cache/wt [current_project]
-set_property parent.project_path Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.xpr [current_project]
+set_property webtalk.parent_dir Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.cache/wt [current_project]
+set_property parent.project_path Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.xpr [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
+add_files Z:/Desktop/test16_converted.coe
+add_files -quiet Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/ip/dual_prt_ram_block_strg_1/dual_prt_ram_block_strg.dcp
+set_property used_in_implementation false [get_files Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/ip/dual_prt_ram_block_strg_1/dual_prt_ram_block_strg.dcp]
+add_files -quiet Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/ip/blk_mem_player/blk_mem_player.dcp
+set_property used_in_implementation false [get_files Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/ip/blk_mem_player/blk_mem_player.dcp]
 read_vhdl -library xil_defaultlib {
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/touch_driver.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/rectangle.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/display_driver.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/PLL_9MHz.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6_design_template.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/sources_1/imports/picoblaze/touch_driver.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/sources_1/imports/picoblaze/kcpsm6.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/sources_1/new/rand_driver.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/new/PLL_9MHz.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/sources_1/new/player_driver.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/new/move_blocks.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/sources_1/imports/picoblaze/kcpsm6_design_template.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/new/draw_blocks.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/new/display_driver.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/imports/new/block_generator.vhd
   Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/background.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/player_driver.vhd
-  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/sources_1/new/TOP.vhd
+  Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/sources_1/new/TOP.vhd
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
-read_xdc Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/constrs_1/new/My_constraint.xdc
-set_property used_in_implementation false [get_files Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.srcs/constrs_1/new/My_constraint.xdc]
+read_xdc Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/constrs_1/new/My_constraint.xdc
+set_property used_in_implementation false [get_files Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.srcs/constrs_1/new/My_constraint.xdc]
 
 
 synth_design -top TOP -part xc7z010clg400-1 -flatten_hierarchy none

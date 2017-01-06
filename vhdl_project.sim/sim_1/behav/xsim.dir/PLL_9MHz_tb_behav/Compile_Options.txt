@@ -1,1 +1,0 @@
--wto "0ecbf044e66242788ff3297c0307da39" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "PLL_9MHz_tb_behav" "xil_defaultlib.PLL_9MHz_tb" -log "elaborate.log" 
