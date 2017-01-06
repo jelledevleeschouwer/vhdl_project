@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project_copy/vhdl_project.xpr">
+<Project Version="7" Minor="14" Path="Z:/Documents/School/2016-2017/Programmable_Logic/vhdl_project/vhdl_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0ecbf044e66242788ff3297c0307da39"/>
@@ -47,7 +47,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/picoblaze/touch_driver.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vhdl_project/pico_blaze/touch_driver.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/pico_blaze/touch_driver.vhd"/>
           <Attr Name="ImportTime" Val="1483483768"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -55,7 +55,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/picoblaze/kcpsm6.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6.vhd"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/picoblaze/kcpsm6.vhd"/>
           <Attr Name="ImportTime" Val="1482319048"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -63,7 +63,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/rand_driver.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vhdl_project/vhdl_project.srcs/sources_1/new/rand_driver.vhd"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/rand_driver.vhd"/>
           <Attr Name="ImportTime" Val="1482485815"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -77,7 +77,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/player_driver.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vhdl_project/vhdl_project.srcs/sources_1/new/player_driver.vhd"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/player_driver.vhd"/>
           <Attr Name="ImportTime" Val="1482495798"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -91,7 +91,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/picoblaze/kcpsm6_design_template.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vhdl_project/vhdl_project.srcs/sources_1/imports/picoblaze/kcpsm6_design_template.vhd"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/imports/picoblaze/kcpsm6_design_template.vhd"/>
           <Attr Name="ImportTime" Val="1482489061"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -117,7 +117,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../vhdl_project/vhdl_project.srcs/sources_1/new/background.vhd">
+      <File Path="$PSRCDIR/sources_1/new/background.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -182,7 +182,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/TOP_tb_behav.wcfg">
+      <File Path="$PPRDIR/../vhdl_project_copy/TOP_tb_behav.wcfg">
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -208,7 +208,7 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="XSimWcfgFile" Val="$PPRDIR/TOP_tb_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/../vhdl_project_copy/TOP_tb_behav.wcfg"/>
       </Config>
     </FileSet>
     <FileSet Name="dual_prt_ram_block_strg" Type="BlockSrcs" RelSrcDir="$PSRCDIR/dual_prt_ram_block_strg">
