@@ -38,13 +38,13 @@ xdata       EQU s3
 ydata       EQU s4
 xsum	    EQU s5
 ysum        EQU s6
-seq	    EQU s7
+seq	        EQU s7
 count       EQU sF
 
 ; ===============================================================================
 ;   SPI patterns
 ; ===============================================================================
-SPI_OUT_CS  EQU 0x00
+SPI_OUT_CS  EQU 0x00	    ; Active low, Chip Select is on pin 0 => 0x00
 SPI_OUT_H   EQU 0x04
 SPI_CLK_H   EQU 0x06
 SPI_OUT_L   EQU 0x00
@@ -58,33 +58,33 @@ SPI_IN_CLK  EQU 0x10
 ; ===============================================================================
 ;   Initialisation
 ; ===============================================================================
-init:  	    DINT
-	    JUMP main
+init:  	    DINT			; Disable interrupts
+	        JUMP main		; Jump to the main routine
 
 ; ===============================================================================
 ;   Read/Write SPI port subroutines
 ; ===============================================================================
 
 ;
-; Clocks out a '1' on the MOSI pin
+; Clocks out a '0' on the MOSI pin
 ;
-out_0:      LOAD A, SPI_OUT_L
+out_0:      LOAD A, SPI_OUT_L           ; Make MOSI low while clock is low
             OUT A, spi_port
-            CALL delay_us
-            LOAD A, SPI_CLK_L
+            CALL delay_us               ; Delay
+            LOAD A, SPI_CLK_L           ; Make MOSI low while clock is low
             OUT A, spi_port
-            CALL delay_us
+            CALL delay_us               ; Delay
             RET
 
 ;
-; Clocks out a '0' on the MOSI pin
+; Clocks out a '1' on the MOSI pin
 ;
-out_1:      LOAD A, SPI_OUT_H
+out_1:      LOAD A, SPI_OUT_H			; Make MOSI high while clock is low
             OUT A, spi_port
-            CALL delay_us
-            LOAD A, SPI_CLK_H
+            CALL delay_us				; Delay
+            LOAD A, SPI_CLK_H			; Make MOSI high while clock is high
             OUT A, spi_port
-            CALL delay_us
+            CALL delay_us				; Delay
             RET
 
 ;
@@ -97,51 +97,56 @@ in3:                                    ; Fall-through, but also acts as instruc
 in2:                                    ; Fall-through, but also acts as instruction after return
             CALL in                     ; Exec 1x, on ret, exec 1x again & ret to callee
 in:                                     ; Fall-through, but also acts as instruction after return
-            LOAD A, SPI_IN_H
+            LOAD A, SPI_IN_H			; Make DCLK high
             OUT A, spi_port
             CALL delay_us
-            LOAD A, SPI_IN_L
+            LOAD A, SPI_IN_L			; Make DCLK low
             OUT A, spi_port
             CALL delay_us
-            IN data_in, spi_port
-            AND data_in, SPI_IN_CLK
-            COMP data_in, SPI_IN_CLK
+            IN data_in, spi_port		; Read the data just before the new rising edge
+            AND data_in, SPI_IN_CLK     ; To make sure only the MISO bit is checked
+            COMP data_in, SPI_IN_CLK	; if one shift a one in B if zero,
             JUMP Z, in_1
-in_0:       SL0 B
+in_0:       SL0 B						; shift a zero into B
             JUMP in_ret
-in_1:       SL1 B
+in_1:       SL1 B						; shift a one into B
 in_ret:     RET
 
 ; ===============================================================================
 ;   Main routine
 ; ===============================================================================
-main:       LOAD xdata, 0
-            LOAD ydata, 0
-            LOAD xsum, 0
-            LOAD ysum, 0
-            LOAD seq, 4
-sequence:   CALL start
-            CALL y_channel
-            CALL mode
-            CALL power_on
-            CALL y_read
-            CALL stop
-            CALL start
-            CALL x_channel
+main:       LOAD xdata, 0				; Zero-initialise xdata
+            LOAD ydata, 0				; Zero-initialise ydata
+            LOAD xsum, 0		        ; Zero-initialise xsum
+            LOAD ysum, 0	            ; Zero-initialise ysum
+            LOAD seq, 4	                ; Zero-initialise seq
+sequence:   CALL start					; Make CS low and set the start bit
+            CALL y_channel				; Put "001" on the MOSI pin
+            CALL mode					; Put "00" on MOSI pin: 12-bit, differential mode
+            CALL power_on				; Put "00" Power-down between conversions
+            CALL y_read					; Read in the data bits from the slave
+            CALL stop					; Disable chip select
+            CALL start					; Do the same thing for X
+            CALL x_channel              ; Put "101" on the MOSI pin
             CALL mode
             CALL power_on
             CALL x_read
             CALL stop
-	    CALL update                 ; Put data on output
+			CALL update
+            SUB seq, 1
+			TEST seq, 0xFF				; Check if we did it 4 times
+            JUMP NZ, sequence			; Not yet -> do it again
+output:	    OUT xsum, out_1
+            OUT ysum, out_2
             JUMP main                   ; Reinitialize and loop
 
 ; ===============================================================================
 ;   Start sequence
 ; ===============================================================================
-start:      LOAD A, SPI_OUT_CS
-            OUT A, spi_port             ; Chip Select
-            CALL delay_us
-            CALL out_1                  ; Start bit
+start:      LOAD A, SPI_OUT_CS			; Make CS low
+            OUT A, spi_port
+            CALL delay_us               ; Delay
+            CALL out_1                  ; Start bit '1'
             RET
 
 ; ===============================================================================
@@ -203,41 +208,35 @@ y_read:     CALL busy_wait
             RET                         ; We don't care about 4 MSBs and padding
 
 ; ===============================================================================
-;   Put coordinates on output
+;   Add values to the average registers
 ; ===============================================================================
-update:     SR0 xdata			; /2
-	    SR0 xdata			; /4
-	    SR0 ydata			; /2
-	    SR0 ydata			; /4
-	    ADD xsum, xdata
-	    ADD ysum, ydata
-            SUB seq, 1
-            TEST seq, 0xFF
-            JUMP NZ, sequence
-output:	    OUT xsum, out_1
-            OUT ysum, out_2
-            RET
+update:     SR0 xdata			        ; /2
+			SR0 xdata			        ; /4
+			SR0 ydata			        ; /2
+			SR0 ydata			        ; /4
+			ADD xsum, xdata
+			ADD ysum, ydata
+			RET
 
 ; ===============================================================================
 ;   Wait until busy is high
 ; ===============================================================================
-busy_wait:  LOAD A, SPI_OUT_L
-	    OUT A, spi_port
-	    CALL delay_us
+busy_wait:  LOAD A, SPI_OUT_L			; Everything output pin low
+	        OUT A, spi_port
+	        CALL delay_us
             IN data_in, spi_port
-            COMP data_in, SPI_BUSY
+            COMP data_in, SPI_BUSY		; Zero flag is set if equal
             JUMP Z, busy_r              ; If 'busy' is 0, check again
-            JUMP busy_wait              ; else, return
+            JUMP busy_wait              ; Else, return
 busy_r:     RET
 
 ; ===============================================================================
-;   1us delay
+;   X us delay
 ; ===============================================================================
-LOOPS       EQU 128
+LOOPS		EQU 192
 
-delay_us:   LOAD count, LOOPS
-delay_us_l: SUB count, 1             	; If outer loop overflows, substract carry from inner loop
-            TEST count, 0xFF
+delay_us:   LOAD count, LOOPS			; Put LOOPS in count
+delay_us_l: SUB count, 1
             JUMP NZ, delay_us_l
             RET
 

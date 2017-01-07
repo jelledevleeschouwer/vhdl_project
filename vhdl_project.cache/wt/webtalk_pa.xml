@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Jan 06 23:33:14 2017">
+<application name="pa" timeStamp="Sat Jan 07 21:10:42 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b8aa081f8170425d9b5b7b146888b227" type="ProjectID"/>
-<property name="ProjectIteration" value="220" type="ProjectIteration"/>
+<property name="ProjectIteration" value="221" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -18,8 +18,8 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddCfgMem" value="3" type="JavaHandler"/>
-<property name="AddSources" value="21" type="JavaHandler"/>
-<property name="AutoConnectTarget" value="26" type="JavaHandler"/>
+<property name="AddSources" value="22" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="27" type="JavaHandler"/>
 <property name="CloseProject" value="1" type="JavaHandler"/>
 <property name="CoreView" value="4" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
@@ -31,19 +31,19 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditUndo" value="2" type="JavaHandler"/>
 <property name="FlipToViewTaskSynthesis" value="4" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="1" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="186" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="187" type="JavaHandler"/>
 <property name="MarkDebug" value="22" type="JavaHandler"/>
 <property name="NewHardwareDashboard" value="2" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="117" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="118" type="JavaHandler"/>
 <property name="OpenProject" value="5" type="JavaHandler"/>
-<property name="OpenRecentTarget" value="11" type="JavaHandler"/>
+<property name="OpenRecentTarget" value="12" type="JavaHandler"/>
 <property name="ProgramDevice" value="65" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="13" type="JavaHandler"/>
 <property name="ProjectSummary" value="13" type="JavaHandler"/>
 <property name="RecustomizeCore" value="10" type="JavaHandler"/>
 <property name="RefreshDevice" value="1" type="JavaHandler"/>
 <property name="ReportTimingSummary" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="219" type="JavaHandler"/>
+<property name="RunBitgen" value="220" type="JavaHandler"/>
 <property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="RunSchematic" value="17" type="JavaHandler"/>
 <property name="RunSynthesis" value="60" type="JavaHandler"/>
@@ -63,7 +63,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TimingConstraintsWizard" value="7" type="JavaHandler"/>
 <property name="ToggleViewNavigator" value="2" type="JavaHandler"/>
 <property name="ToolsTemplates" value="1" type="JavaHandler"/>
-<property name="UpdateSourceFiles" value="10" type="JavaHandler"/>
+<property name="UpdateSourceFiles" value="12" type="JavaHandler"/>
 <property name="ViewLayoutCmd" value="7" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="12" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="97" type="JavaHandler"/>
