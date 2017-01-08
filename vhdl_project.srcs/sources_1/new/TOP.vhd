@@ -231,7 +231,7 @@ end component;
 ---------------------------------------
 -- Constants
 ---------------------------------------
-constant color_delay : integer := 14999999;         -- Delay for color change speed of obstacles
+constant color_delay : integer := 15000000;         -- Delay for color change speed of obstacles
 
 ---------------------------------------
 -- Signals to internally connect the different components
@@ -404,8 +404,13 @@ begin
             blue_sig<=X"FF";
             delay:=0;
         else
-           delay := delay + 1; -- Increment the delay
-           if(delay = color_delay)then
+            if (delay < color_delay - 1) then
+                delay := delay + 1;
+            else
+                delay := 0;
+            end if;
+
+            if (delay = color_delay - 1) then
                 if(red_sig = X"00")then
                     if(green_sig = X"00")then
                         if(blue_sig = X"00")then
@@ -418,16 +423,14 @@ begin
                             blue_sig <= std_logic_vector(unsigned(blue_sig)-1);
                         end if;
                     else
-                        -- Then subtract all green color
+                        -- Secondly, subtract all green color
                         green_sig <= std_logic_vector(unsigned(green_sig)-1);
                     end if;
                 else
                     -- First subtract all red color
                     red_sig <= std_logic_vector(unsigned(red_sig)-1);
                 end if;
-
-                delay := 0;
-           end if;
+            end if; -- End overflow
         end if; -- End reset
     end if; -- End clock
 end process;
