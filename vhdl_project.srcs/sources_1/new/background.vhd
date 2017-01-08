@@ -4,11 +4,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity background is
     Port (
-        CLK     : in STD_LOGIC;
-        X_POS   : in STD_LOGIC_VECTOR (9 downto 0);
-        Y_POS   : in STD_LOGIC_VECTOR (9 downto 0);
-        VISIBLE : in STD_LOGIC;
-        SHOW    : out STD_LOGIC
+        CLK      : in STD_LOGIC;                    -- 125 MHz
+
+        X_POS    : in STD_LOGIC_VECTOR(8 downto 0); -- Current X-position of draw cursor
+        Y_POS    : in STD_LOGIC_VECTOR(8 downto 0); -- Current Y-position of draw cursor
+        VISIBLE  : in STD_LOGIC;                    -- Draw cursor is in visible portion
+
+        SHOW     : out STD_LOGIC                    -- Control signal applied to Color-MUX
     );
 end background;
 
@@ -65,21 +67,40 @@ background_proc: process(CLK)
 
     variable x : signed(9 downto 0);
     variable y : signed(9 downto 0);
-    
 begin
-    x := signed(X_POS);
-    y := signed(Y_POS);
-
     if (CLK'event and CLK='1') then
         if (VISIBLE = '1') then
+            x := signed("0" & X_POS);
+            y := signed("0" & Y_POS);
+
             if y >= y0 then
-                -- equation of a line
-                --                     Y-YO = ((Y1-YO)/(X1-X0)) * (X - X0)
+
+                -- Equation of a line:
+                --      y - y0 = (dy / dx) * (x - x0)
+                --    > dx * (y - y0) = dy * (x - x0)
+                --    > f(x, y) = dy * (x - x0) - dx * (y - y0) + C
+                --    > f(x, y) = Ax + By + C                       (standaardvorm van een lijn)
+                --    > -C = Ax + By
+                --  >>> C = [0, dy[
                 --
-                --           (X1-XO)*(Y-YO) = (Y1-YO)*(X-XO)    ->Y1-YO = cte, eerste lijn en einde vh scherm, = dY
-                --           (X1-XO)*(Y-YO) = dY * (X-XO)
-                --           (dY * (X- XO)  = (X1-X0)*(Y-YO)    -> X0 = Xb, X1 = Xf
-                --           (dY * (X- Xb)  = (Xf - Xb) * (Y - Yo)
+                --      +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+--> x
+                --      |0,0| f(x,y) = 6 * (0 - 0) - 2 * (0 - 0) = 0
+                --      +---+
+                --      |0,1| f(x,y) = 6 * (0 - 0) - 2 * (1 - 0) = -2
+                --      +---+
+                --      |0,2| f(x,y) = 6 * (0 - 0) - 2 * (2 - 0) = -4
+                --      +---+---+
+                --      |   |1,3| f(x, y) = 6 * (1 - 0) - 2 * (3 - 0) = 0
+                --      +   +---+
+                --      |   |1,4| f(x, y) = 6 * (1 - 0) - 2 * (4 - 0) = -2
+                --      +   +---+
+                --      |   |1,5| f(x, y) = 6 * (1 - 0) - 2 * (5 - 0) = -4
+                --      +   +---+---+
+                --      |       |2,6| f(x, y) = 6 * (2 - 0) - 2 * (6 - 0) = 0
+                --      +       +---+
+                --      |
+                --      v y
+                --
                 r0 := (dy * (x - x0_b)) - ((x0_f - x0_b) * (y - y0)); --verticale lijn 1
                 r1 := (dy * (x - x1_b)) - ((x1_f - x1_b) * (y - y0)); --verticale lijn 2
                 r2 := (dy * (x - x2_b)) - ((x2_f - x2_b) * (y - y0)); --verticale lijn 3
@@ -88,8 +109,8 @@ begin
                 r5 := (dy * (x - x5_b)) - ((x5_f - x5_b) * (y - y0)); --verticale lijn 6
                 r6 := (dy * (x - x6_b)) - ((x6_f - x6_b) * (y - y0)); --verticale lijn 7
                 r7 := (dy * (x - x7_b)) - ((x7_f - x7_b) * (y - y0)); --verticale lijn 8
-    
-                if 
+
+                if
                 -- horizontal lines
                 ((y >= y0 and y <= y0 + 1) or (y = y0 + 3)) or
                 (y >= y2 and y < y2 + 1) or
@@ -99,7 +120,7 @@ begin
                 (y >= y6 and y <= y6 + 1) or
                 (y >= y7 and y <= y7 + 2) or
                 (y >= y8 and y <= y8 + 2) or
-    
+
                 -- Perspective ("verticals")
                 (r0 > -dy - de and r0 <= de) or
                 (r1 > -dy - de and r1 <= de) or
@@ -113,11 +134,10 @@ begin
                     SHOW <= '1';
                 else
                     SHOW <= '0';
-                end if;
-            end if;
-        end if;
-    end if;
-
+                end if; -- EOF LINES
+            end if; -- EOF Y_POS
+        end if; -- EOF VISIBLE
+    end if; -- EOF CLK
 end process;
 
 end Behavioral;
