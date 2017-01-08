@@ -26,25 +26,28 @@ library UNISIM;
 use UNISIM.vcomponents.all;
 
 entity TOP is
-    Port ( CLK     :in  STD_LOGIC;  -- 125 MHz
-           RST     :in  STD_LOGIC;
-           -- Control signals of display
-           P_CLK   :out STD_LOGIC;  -- 9 MHz
-           H_SYNC  :out STD_LOGIC;
-           V_SYNC  :out STD_LOGIC;
-           RED     :out STD_LOGIC_VECTOR (7 downto 0);
-           GREEN   :out STD_LOGIC_VECTOR (7 downto 0);
-           BLUE    :out STD_LOGIC_VECTOR (7 downto 0);
-           DISP_EN :out STD_LOGIC;
-           BL_EN   :out STD_LOGIC;
-           GND     :out STD_LOGIC;
-           -- SPI
-           CS      :out STD_LOGIC;
-           DCLK      :out STD_LOGIC;
-           MOSI      :out STD_LOGIC;
-           MISO      :in STD_LOGIC;
-           BUSY      :in STD_LOGIC
-           );
+    Port (
+        CLK     :in  STD_LOGIC;  -- 125 MHz
+        RST     :in  STD_LOGIC;
+
+        -- Control signals of display
+        P_CLK   :out STD_LOGIC;  -- 9 MHz
+        H_SYNC  :out STD_LOGIC;
+        V_SYNC  :out STD_LOGIC;
+        RED     :out STD_LOGIC_VECTOR (7 downto 0);
+        GREEN   :out STD_LOGIC_VECTOR (7 downto 0);
+        BLUE    :out STD_LOGIC_VECTOR (7 downto 0);
+        DISP_EN :out STD_LOGIC;
+        BL_EN   :out STD_LOGIC;
+        GND     :out STD_LOGIC;
+
+        -- SPI
+        CS      :out STD_LOGIC;
+        DCLK    :out STD_LOGIC;
+        MOSI    :out STD_LOGIC;
+        MISO    :in STD_LOGIC;
+        BUSY    :in STD_LOGIC
+    );
 end TOP;
 
 architecture Behavioral of TOP is
@@ -84,14 +87,14 @@ end component;
 -- SPI Driver (touch interface)
 component touch_driver_picoblaze is
     Port (
-        CS   : out std_logic;   -- Chip Select (Active low)
-        DCLK : out std_logic;   -- SPI Clock
-        MOSI : out std_logic;   -- MOSI
-        VALID: out std_logic;   -- Valid touch detected
-        BUSY : in std_logic;    -- Busy from touch panel (conversion)
-        MISO : in std_logic;    -- MISO
-        CLK  : in std_logic;    -- 125 MHz for PicoBlaze
-        RST  : in std_logic;    -- RST for PicoBlaze
+        CS   : out std_logic;                    -- Chip Select (Active low)
+        DCLK : out std_logic;                    -- SPI Clock
+        MOSI : out std_logic;                    -- MOSI
+        VALID: out std_logic;                    -- Valid touch detected
+        BUSY : in std_logic;                     -- Busy from touch panel (conversion)
+        MISO : in std_logic;                     -- MISO
+        CLK  : in std_logic;                     -- 125 MHz for PicoBlaze
+        RST  : in std_logic;                     -- RST for PicoBlaze
         X_POS: out std_logic_vector(8 downto 0); -- X-position of touch (valid only if VALID='1')
         Y_POS: out std_logic_vector(8 downto 0)  -- Y-position of touch (valid only if VALID='1')
     );
@@ -365,8 +368,8 @@ begin
 
         if unsigned(X_POS) > xt and unsigned(X_POS) <= xt + to_unsigned(32, 9)
         and unsigned(Y_POS) > yt and unsigned(Y_POS) <= yt + to_unsigned(32, 9) then
-            -- Make this value one when you want to debug the position of touches
-            PRIOR <= '1';
+            -- Make this value 1 when you want to debug the position of touches
+            PRIOR <= '0';
         else
             PRIOR <= '0';
         end if;

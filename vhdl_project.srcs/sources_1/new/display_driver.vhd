@@ -61,7 +61,7 @@ constant h_front_porch: integer :=8;
 constant h_back_porch : integer :=43;
 constant h_pulse_width: integer :=2;
 
-constant v_cycle      : integer :=288;
+constant v_cycle      : integer :=298;
 constant v_disp_period: integer :=272;
 constant v_front_porch: integer :=4;
 constant v_back_porch : integer :=12;
