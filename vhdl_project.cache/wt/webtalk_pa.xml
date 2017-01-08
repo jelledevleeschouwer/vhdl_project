@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sun Jan 08 23:00:17 2017">
+<application name="pa" timeStamp="Sun Jan 08 23:14:46 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b8aa081f8170425d9b5b7b146888b227" type="ProjectID"/>
-<property name="ProjectIteration" value="244" type="ProjectIteration"/>
+<property name="ProjectIteration" value="245" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -31,19 +31,19 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditUndo" value="2" type="JavaHandler"/>
 <property name="FlipToViewTaskSynthesis" value="4" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="1" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="201" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="202" type="JavaHandler"/>
 <property name="MarkDebug" value="22" type="JavaHandler"/>
 <property name="NewHardwareDashboard" value="2" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="133" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="134" type="JavaHandler"/>
 <property name="OpenProject" value="5" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="16" type="JavaHandler"/>
-<property name="ProgramDevice" value="80" type="JavaHandler"/>
+<property name="ProgramDevice" value="81" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="13" type="JavaHandler"/>
 <property name="ProjectSummary" value="13" type="JavaHandler"/>
 <property name="RecustomizeCore" value="10" type="JavaHandler"/>
 <property name="RefreshDevice" value="1" type="JavaHandler"/>
 <property name="ReportTimingSummary" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="243" type="JavaHandler"/>
+<property name="RunBitgen" value="244" type="JavaHandler"/>
 <property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="RunSchematic" value="19" type="JavaHandler"/>
 <property name="RunSynthesis" value="75" type="JavaHandler"/>
