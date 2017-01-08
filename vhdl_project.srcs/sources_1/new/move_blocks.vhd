@@ -137,6 +137,7 @@ if(CLK'event and CLK='1')then
             end if; -- End first_time check
         end if; -- End update region check
     end if; -- End reset
+
     ADDR_B <= std_logic_vector(to_unsigned(addrb,4));
 end if; -- End clock
 
